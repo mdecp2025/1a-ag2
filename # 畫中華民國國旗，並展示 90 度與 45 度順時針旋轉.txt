@@ -1,0 +1,137 @@
+# 畫中華民國國旗，並展示 90 度與 45 度順時針旋轉
+# 導入 doc
+from browser import document as doc
+# 以下將利用 html 產生所需的繪圖畫布
+from browser import html
+# 利用 math 函式庫執行三角函數運算
+import math
+
+# --- 畫布與環境設定 ---
+
+# 定義畫布尺寸
+FLAG_W = 600
+FLAG_H = 400
+# 旋轉中心點
+CENTER_X = FLAG_W / 2
+CENTER_Y = FLAG_H / 2
+
+# 將畫布添加到 id 為 brython_div1 的 HTML 元素中
+brython_div = doc["brython_div1"]
+
+# 創建標籤和畫布
+brython_div <= html.H3("原始國旗 (600x400)")
+canvas_orig = html.CANVAS(width = FLAG_W, height = FLAG_H, id = "flag_orig", style = {"border": "1px solid #ccc"})
+brython_div <= canvas_orig
+
+brython_div <= html.H3("順時針旋轉 90 度")
+canvas_90 = html.CANVAS(width = FLAG_W, height = FLAG_H, id = "flag_90", style = {"border": "1px solid #ccc"})
+brython_div <= canvas_90
+
+brython_div <= html.H3("順時針旋轉 45 度")
+canvas_45 = html.CANVAS(width = FLAG_W, height = FLAG_H, id = "flag_45", style = {"border": "1px solid #ccc"})
+brython_div <= canvas_45
+
+# --- 核心繪圖函數 (國旗內容) ---
+def draw_flag_content(ctx):
+    """繪製未旋轉狀態的國旗內容，所有座標都是基於 (0, 0) 起點"""
+    flag_w = FLAG_W
+    flag_h = FLAG_H
+    
+    # 青天白日圖案的中心座標 (位於左上四分之一處)
+    circle_x = flag_w/4
+    circle_y = flag_h/4
+    star_radius = flag_w/8 # 白日光芒半徑
+
+    # 1. 滿地紅 (Red Earth)
+    ctx.fillStyle='rgb(255, 0, 0)'
+    ctx.fillRect(0,0,flag_w,flag_h)
+
+    # 2. 青天 (Blue Sky)
+    ctx.fillStyle='rgb(0, 0, 150)'
+    ctx.fillRect(0,0,flag_w/2,flag_h/2)
+
+    # 3. 十二道光芒白日 (White Sun with Twelve Rays) - 採用原程式碼邏輯
+    ctx.beginPath()
+    angle = 0
+    for i in range(24):
+        # 採用原始程式碼中不常見的角度步進，確保旋轉前後形狀一致
+        angle += 5*math.pi*2/12 
+        toX = circle_x + math.cos(angle)*star_radius
+        toY = circle_y + math.sin(angle)*star_radius
+        if (i):
+            ctx.lineTo(toX, toY)
+        else:
+            ctx.moveTo(toX, toY)
+    ctx.closePath()
+    ctx.fillStyle = '#fff'
+    ctx.fill()
+
+    # 4. 白日:藍圈 (Blue Ring)
+    ctx.beginPath()
+    # 原始半徑: flag_w * 17 / 240
+    ctx.arc(circle_x, circle_y, flag_w*17/240, 0, math.pi*2, True)
+    ctx.closePath()
+    ctx.fillStyle = 'rgb(0, 0, 149)'
+    ctx.fill()
+
+    # 5. 白日:白心 (White Center)
+    ctx.beginPath()
+    # 原始半徑: flag_w / 16
+    ctx.arc(circle_x, circle_y, flag_w/16, 0, math.pi*2, True)
+    ctx.closePath()
+    ctx.fillStyle = '#fff'
+    ctx.fill()
+
+# --- 繪製函數：原始國旗 ---
+def draw_original_flag():
+    ctx = doc["flag_orig"].getContext("2d")
+    draw_flag_content(ctx)
+
+# --- 繪製函數：順時針旋轉 90 度 ---
+def draw_90_degree_flag():
+    ctx = doc["flag_90"].getContext("2d")
+    
+    # 1. 儲存當前狀態
+    ctx.save()
+    
+    # 2. 平移原點到畫布中心 (600/2, 400/2) = (300, 200)
+    ctx.translate(CENTER_X, CENTER_Y)
+    
+    # 3. 旋轉 90 度 (π/2) 順時針
+    ctx.rotate(math.pi / 2)
+    
+    # 4. 將原點平移回去，以便國旗內容以 (0, 0) 為起點繪製
+    ctx.translate(-CENTER_X, -CENTER_Y)
+    
+    # 5. 繪製國旗內容
+    draw_flag_content(ctx)
+    
+    # 6. 恢復狀態
+    ctx.restore()
+
+# --- 繪製函數：順時針旋轉 45 度 ---
+def draw_45_degree_flag():
+    ctx = doc["flag_45"].getContext("2d")
+    
+    # 1. 儲存當前狀態
+    ctx.save()
+    
+    # 2. 平移原點到畫布中心
+    ctx.translate(CENTER_X, CENTER_Y)
+    
+    # 3. 旋轉 45 度 (π/4) 順時針
+    ctx.rotate(math.pi / 4)
+    
+    # 4. 將原點平移回去
+    ctx.translate(-CENTER_X, -CENTER_Y)
+    
+    # 5. 繪製國旗內容
+    draw_flag_content(ctx)
+    
+    # 6. 恢復狀態
+    ctx.restore()
+
+# --- 執行繪圖 ---
+draw_original_flag()
+draw_90_degree_flag()
+draw_45_degree_flag()
