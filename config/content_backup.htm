@@ -3,7 +3,7 @@
 <p>個人github:<a href="https://github.com/LanChienEn/w11">https://github.com/LanChienEn/w11</a></p>
 <p style="padding-left: 60px;"></p>
 <p></p>
-<h1>Brython</h1>
+<h1>Brython指令區</h1>
 <p><button id="add1to100">1 add to 100</button><button id="robot1">機器人巡邏</button><button id="free_walk">自由行</button></p>
 <!-- 導入 brython 程式庫 -->
 <p>
@@ -298,7 +298,7 @@ doc["aitetris"].bind("click", aitetris.do)
 <div id="brython_div2"></div>
 <!-- editor2 結束 --><hr/>
 <p></p>
-<h2>Brython_ex</h2>
+<h2>Brython</h2>
 <p><a href="https://mde.tw/cp2025/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/ec4bb35dd0769e7a83d2a9fa57878a67/raw/9d55811467e411eb89f74171d8a586ae9f1a96aa/brython_robot_free_walk.py">機器人自由行</a></p>
 <p>Can we bring pythonpad into this page? <a href="https://pythonpad.github.io/docs/manual.html">https://pythonpad.github.io/docs/manual.html</a> </p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import document, html, timer
@@ -634,7 +634,7 @@ sys.stderr = JsWriter()
 }
 </script>
 </p>
-<h2>Pyodide_ex</h2>
+<h2>Pyodide</h2>
 <p><a href="https://mde.tw/cp2025/content/Pyodide.html?src=https://gist.githubusercontent.com/mdecycu/ec4bb35dd0769e7a83d2a9fa57878a67/raw/f3d75d08f2b90f4470342e91ee1e5c36b5f950bf/pyodide_robot_ex1.py">Pyodide 機器人巡邏</a></p>
 <p>Pyodide 導入客製化模組:</p>
 <pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">const code = `
@@ -647,8 +647,10 @@ pyodide.runPython(code);
 <p><a href="https://mde.tw/cp2025/content/Pyodide.html?src=https://gist.githubusercontent.com/mdecycu/ec4bb35dd0769e7a83d2a9fa57878a67/raw/3ed6869dcd7312254513ca507de17945e15a9b6f/box_max_volume_short.py">Volume_max_pyodide_de_short.py</a></p>
 <p><a href="https://mde.tw/cp2025/content/Pyodide.html?src=https://gist.githubusercontent.com/mdecycu/ec4bb35dd0769e7a83d2a9fa57878a67/raw/3ed6869dcd7312254513ca507de17945e15a9b6f/box_volume_max_pyodide_de.py">Volume_max_pyodide_de.py</a></p>
 <p></p>
+<h1>組長</h1>
+<p></p>
 <h1>w12</h1>
-<h2>國旗旋轉:</h2>
+<h2>國旗旋轉</h2>
 <p># 畫中華民國國旗，並展示 90 度與 45 度順時針旋轉<br/># 導入 doc<br/>from browser import document as doc<br/># 以下將利用 html 產生所需的繪圖畫布<br/>from browser import html<br/># 利用 math 函式庫執行三角函數運算<br/>import math</p>
 <p># --- 畫布與環境設定 ---</p>
 <p># 定義畫布尺寸<br/>FLAG_W = 600<br/>FLAG_H = 400<br/># 旋轉中心點<br/>CENTER_X = FLAG_W / 2<br/>CENTER_Y = FLAG_H / 2</p>
@@ -666,7 +668,7 @@ pyodide.runPython(code);
 <p># --- 繪製函數：順時針旋轉 90 度 ---<br/>def draw_90_degree_flag():<br/> ctx = doc["flag_90"].getContext("2d")<br/> <br/> # 1. 儲存當前狀態<br/> ctx.save()<br/> <br/> # 2. 平移原點到畫布中心 (600/2, 400/2) = (300, 200)<br/> ctx.translate(CENTER_X, CENTER_Y)<br/> <br/> # 3. 旋轉 90 度 (π/2) 順時針<br/> ctx.rotate(math.pi / 2)<br/> <br/> # 4. 將原點平移回去，以便國旗內容以 (0, 0) 為起點繪製<br/> ctx.translate(-CENTER_X, -CENTER_Y)<br/> <br/> # 5. 繪製國旗內容<br/> draw_flag_content(ctx)<br/> <br/> # 6. 恢復狀態<br/> ctx.restore()</p>
 <p># --- 繪製函數：順時針旋轉 45 度 ---<br/>def draw_45_degree_flag():<br/> ctx = doc["flag_45"].getContext("2d")<br/> <br/> # 1. 儲存當前狀態<br/> ctx.save()<br/> <br/> # 2. 平移原點到畫布中心<br/> ctx.translate(CENTER_X, CENTER_Y)<br/> <br/> # 3. 旋轉 45 度 (π/4) 順時針<br/> ctx.rotate(math.pi / 4)<br/> <br/> # 4. 將原點平移回去<br/> ctx.translate(-CENTER_X, -CENTER_Y)<br/> <br/> # 5. 繪製國旗內容<br/> draw_flag_content(ctx)<br/> <br/> # 6. 恢復狀態<br/> ctx.restore()</p>
 <p># --- 執行繪圖 ---<br/>draw_original_flag()<br/>draw_90_degree_flag()<br/>draw_45_degree_flag()</p>
-<h2>機器人七段程式碼:</h2>
+<h2>機器人七段程式碼</h2>
 <p></p>
 <p>#請修正以下程式讓機器人可以走出七段顯示器格式的數字<br/>from robot_lib import World as BaseWorld, AnimatedRobot as BaseRobot, timer, CELL_SIZE</p>
 <p># --- 1. 定義世界（加入細格） ---<br/>class MyWorld(BaseWorld):<br/> def __init__(self, width=10, height=10, sub_cell=5):<br/> super().__init__(width, height)<br/> self.sub_cell = sub_cell<br/> self.sub_size = CELL_SIZE // sub_cell<br/> self._draw_fine_grid()</p>
