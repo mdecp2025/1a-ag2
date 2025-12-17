@@ -131,7 +131,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='First.html'>First</a><li class='has-children'><a href='Brython指令區.html'>Brython指令區</a><ul class='dropdown'><li><a href='Brython.html'>Brython</a></li></ul><li class='has-children'><a href='Pyodide指令區.html'>Pyodide指令區</a><ul class='dropdown'><li><a href='Pyodide.html'>Pyodide</a></li></ul><li class='has-children'><a href='w12.html'>w12</a><ul class='dropdown'><li><a href='國旗旋轉.html'>國旗旋轉</a><li><a href='機器人七段程式碼.html'>機器人七段程式碼</a></li></ul><li class='has-children'><a href='期末報告1(w14三個操作).html'>期末報告1(w14三個操作)</a><ul class='dropdown'><li><a href='操作一、操作二.html'>操作一、操作二</a><li><a href='第二個程式的執行.html'>第二個程式的執行</a><li><a href='第三個憤怒鳥小遊戲.html'>第三個憤怒鳥小遊戲</a></li></ul><li class='has-children'><a href='期末報告2(程式新功能).html'>期末報告2(程式新功能)</a><ul class='dropdown'><li><a href='第二個程式的改良.html'>第二個程式的改良</a><li><a href='我所添加的程式新功能.html'>我所添加的程式新功能</a></li>
+                     <li><a href='首頁.html'>首頁</a><li class='has-children'><a href='Brython指令區.html'>Brython指令區</a><ul class='dropdown'><li><a href='Brython.html'>Brython</a></li></ul><li class='has-children'><a href='Pyodide指令區.html'>Pyodide指令區</a><ul class='dropdown'><li><a href='Pyodide.html'>Pyodide</a></li></ul><li class='has-children'><a href='w12.html'>w12</a><ul class='dropdown'><li><a href='國旗旋轉.html'>國旗旋轉</a><li><a href='機器人七段程式碼.html'>機器人七段程式碼</a></li></ul><li class='has-children'><a href='期末報告1(w14三個操作).html'>期末報告1(w14三個操作)</a><ul class='dropdown'><li><a href='操作一、操作二.html'>操作一、操作二</a><li><a href='第二個程式的執行.html'>第二個程式的執行</a><li><a href='第三個憤怒鳥小遊戲.html'>第三個憤怒鳥小遊戲</a></li></ul><li class='has-children'><a href='期末報告2(程式新功能).html'>期末報告2(程式新功能)</a><ul class='dropdown'><li><a href='第二個程式的改良.html'>第二個程式的改良</a><li><a href='我所添加的程式新功能.html'>我所添加的程式新功能</a></li>
                       </ul>
                 </nav>
               </div>
@@ -143,17 +143,17 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">第二個程式的改良 << <a href='第二個程式的改良.html'>Previous</a> <br /><h1>我所添加的程式新功能</h1>
-<p><strong>我把程式改成：</strong></p>
-<p><strong>手機可玩</strong> → 除了 click 也支援 touchstart 事件</p>
-<p><strong>圓點顏色固定</strong> → 移除隨機顏色，設定固定顏色（例如 #ff4500）</p>
-<p><br/>以下是我的程式碼:</p>
+<p><span style="background-color: #ccffff;"><strong>我把程式改成：</strong></span></p>
+<p><span style="background-color: #ffff00;"><strong>手機可玩</strong></span> → 除了 click 也支援 touchstart 事件</p>
+<p><span style="background-color: #ffff00;"><strong>圓點顏色固定</strong></span> → 移除隨機顏色，設定固定顏色（例如 #ff4500）</p>
+<p><br/><span style="background-color: #ccffff;"><strong>以下是我的程式碼:</strong></span></p>
 <p># --- 遊戲核心邏輯 ---</p>
 <p>def move_target():<br/> """移動目標元素"""<br/> if not game_active:<br/> return<br/> <br/> max_x = game_area.clientWidth - 50<br/> max_y = game_area.clientHeight - 50<br/> min_y = 40</p>
 <p>new_x = random.randint(0, max(0, max_x))<br/> new_y = random.randint(min_y, max(min_y, max_y))<br/> <br/> # 🔹 固定顏色，移除隨機顏色<br/> target.style.backgroundColor = "#ff4500"<br/> <br/> target.style.left = f"{new_x}px"<br/> target.style.top = f"{new_y}px"</p>
 <p># 🔹 同時綁定 click 與 touchstart 事件，手機也可觸發<br/>def hit_target(event):<br/> """點擊或觸碰目標時觸發"""<br/> global score<br/> if not game_active:<br/> return</p>
 <p>score += 1<br/> score_display.text = f"分數: {score}"<br/> move_target()<br/> event.stopPropagation()</p>
 <p>target.bind("click", hit_target)<br/>target.bind("touchstart", hit_target) # 🔹 新增手機觸控支援</p>
-<p><br/><strong>修改重點說明：</strong></p>
+<p><br/><span style="background-color: #ccffff;"><strong>修改重點說明：</strong></span></p>
 <p><span style="background-color: #ffff99;">1.固定顏色</span></p>
 <p><span style="background-color: #ffff99;">target.style.backgroundColor = "#ff4500"</span></p>
 <p><br/><span style="background-color: #ffff99;">2.不再隨機產生 RGB。</span></p>
@@ -162,7 +162,7 @@ img.add_border {
 <p><br/><span style="background-color: #ffff99;">手機瀏覽器不一定觸發 click，加入 touchstart 才能觸碰圓點得分。</span></p>
 <p><span style="background-color: #ffff99;">3.原有動畫仍保留</span></p>
 <p><span style="background-color: #ffff99;">圓形移動依舊平滑 (transition)</span></p>
-<p><br/><strong>我再次修改，把遊戲改成手機友善版，包含：</strong></p>
+<p><br/><span style="background-color: #ccffff;"><strong>我再次修改，把遊戲改成手機友善版，包含：</strong></span></p>
 <p><span style="background-color: #ffff99;">畫面自適應手機寬度（最大 600px，最小 320px）</span></p>
 <p><span style="background-color: #ffff99;">圓點固定顏色</span></p>
 <p><span style="background-color: #ffff99;">手機觸控支援</span></p>
@@ -182,11 +182,11 @@ img.add_border {
 <p>target_size = min(50, game_area.clientWidth * 0.1)<br/>target.style.width = f"{target_size}px"<br/>target.style.height = f"{target_size}px"</p>
 <p><br/>手機螢幕小時，圓形會自動縮小到 10% 的畫面寬度</p>
 <p>桌機維持最大 50px</p>
-<p><br/><strong>修改後效果：</strong></p>
+<p><br/><span style="background-color: #ccffff;"><strong>修改後效果：</strong></span></p>
 <p><span style="background-color: #ffff99;">手機與平板都可以觸碰圓點得分</span></p>
 <p><span style="background-color: #ffff99;">圓點顏色固定，遊戲更穩定</span></p>
 <p><span style="background-color: #ffff99;">手機自適應寬度，遊戲畫面不會超出螢幕</span></p>
-<p><br/><strong>最後整合:</strong></p>
+<p><br/><span style="background-color: #ccffff;"><strong>最後整合:</strong></span></p>
 <p>{% extends "base.html" %}</p>
 <p>{% block title %}Brython 遊戲{% endblock %}</p>
 <p>{% block content %}<br/> &lt;script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.11.3/brython.min.js"&gt;&lt;/script&gt;<br/> &lt;script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.11.3/brython_stdlib.js"&gt;&lt;/script&gt;<br/> <br/> &lt;body onload="brython(1)"&gt;</p>
@@ -210,14 +210,14 @@ img.add_border {
 <p># --- 遊戲啟動 ---<br/> def start_game():<br/> global game_active, game_over_time, move_interval_handle, score<br/> score = 0<br/> game_active = True<br/> score_display.text = "分數: 0"<br/> timer_display.text = f"時間: {GAME_DURATION}s"<br/> <br/> game_over_time = time.time() + GAME_DURATION<br/> <br/> check_time()<br/> move_target()<br/> move_interval_handle = timer.set_interval(move_target, 800)</p>
 <p># 啟動遊戲<br/> start_game()</p>
 <p>&lt;/script&gt;<br/> {% endraw %}<br/> <br/> &lt;/body&gt;<br/>{% endblock %}</p>
-<p><br/><strong>修改重點總結：</strong></p>
+<p><br/><span style="background-color: #ccffff;"><strong>修改重點總結：</strong></span></p>
 <p><span style="background-color: #ffff99;">手機自適應畫面：</span></p>
 <p><span style="background-color: #ffff99;">width: 100%; max-width: 600px; min-width: 320px;</span></p>
 <p><br/><span style="background-color: #ffff99;">固定圓點顏色：</span></p>
 <p><span style="background-color: #ffff99;">target.style.backgroundColor = "#ff4500"</span></p>
 <p><br/><span style="background-color: #ffff99;">手機觸控支援：</span></p>
 <p><span style="background-color: #ffff99;">target.bind("touchstart", hit_target)</span></p>
-<p><br/><strong>這個版本：</strong></p>
+<p><br/><span style="background-color: #ccffff;"><strong>這個版本：</strong></span></p>
 <p>手機和平板都能正常點擊 / 觸碰圓點</p>
 <p>畫面自動縮放，不會超出手機螢幕</p>
 <p>顏色固定，遊戲更穩定</p>
