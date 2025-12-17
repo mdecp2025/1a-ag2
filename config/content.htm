@@ -649,6 +649,8 @@ pyodide.runPython(code);
 <p><a href="https://mde.tw/cp2025/content/Pyodide.html?src=https://gist.githubusercontent.com/mdecycu/ec4bb35dd0769e7a83d2a9fa57878a67/raw/3ed6869dcd7312254513ca507de17945e15a9b6f/box_volume_max_pyodide_de.py">Volume_max_pyodide_de.py</a></p>
 <p></p>
 <h1>孤獨組長...</h1>
+<h2>組員失蹤+前帳號被封鎖QQ</h2>
+<p>以下是我獨立奮鬥的過程+再戰的成果!!!!!</p>
 <p></p>
 <h1>w12</h1>
 <h2>國旗旋轉</h2>
@@ -692,11 +694,184 @@ pyodide.runPython(code);
 <p>for i in range(10):<br/> # 每個數字的起始 X 細格座標 (每個數字寬度 4，間隔 2，共 6 寬度)<br/> start_x_offset = 1 + i * 6 <br/> draw_digit(robot, i, start_x_offset, START_Y_SUB_CELL)</p>
 <p>print("機器人正在寫字：0123456789 (已修正座標反轉問題)")</p>
 <p></p>
-<h1>w14</h1>
+<h1>期末報告1(w14三個操作)</h1>
 <h2><span data-teams="true">操作一、操作二</span></h2>
 <p><span data-teams="true">影片:<a href="https://youtu.be/HyKCpGbWiek">https://youtu.be/HyKCpGbWiek</a></span></p>
 <h2><span data-teams="true">第二個程式的執行</span></h2>
 <p><span data-teams="true"><span>影片:</span><a href="https://youtu.be/gs6Zbh4u41A">https://youtu.be/gs6Zbh4u41A</a></span></p>
 <h2><span data-teams="true">第三個憤怒鳥小遊戲</span></h2>
 <p><span data-teams="true"><span>影片:<a href="https://youtu.be/Mebi7DRFnMc">https://youtu.be/Mebi7DRFnMc</a></span></span></p>
+<p><br/>期末報告2(<span data-teams="true"><span>程式新功能)</span></span></p>
+<h2><span data-teams="true">第二個程式的改良</span></h2>
+<p><span data-teams="true">以下是第二個程式的原始碼分析:</span></p>
+<p><strong>一、整體架構總覽</strong></p>
+<p>這是一個：Flask 網頁 + Brython 寫的點擊小遊戲 + Ajax 上傳分數</p>
+<p>📌 技術角色分工：</p>
+<p>技術 用途<br/>Flask 後端伺服器、分數儲存<br/>Jinja2 HTML 模板引擎<br/>Brython 在瀏覽器執行 Python<br/>JavaScript (Ajax) 非同步送分數<br/>HTML / CSS 遊戲畫面</p>
+<p><br/><strong>二、Jinja2 模板結構說明</strong></p>
+<p>{% extends "base.html" %}</p>
+<p>🔹 繼承 base.html</p>
+<p>使用 Flask 常見的 模板繼承</p>
+<p>base.html 通常包含：</p>
+<p>&lt;html&gt;</p>
+<p>&lt;head&gt;</p>
+<p>導覽列</p>
+<p>共用 CSS<br/>{% block title %}Brython 遊戲{% endblock %}<br/>🔹 設定頁面標題<br/>對應 base.html 裡的 {% block title %}</p>
+<p>瀏覽器標題顯示「Brython 遊戲」</p>
+<p><br/>{% block content %} ... {% endblock %}<br/>🔹 主內容區<br/>整個遊戲畫面都在這個區塊內</p>
+<p><strong>三、載入 Brython</strong></p>
+<p>&lt;script src="https://cdn.jsdelivr.net/npm/brython@3.11.3/brython.min.js"&gt;&lt;/script&gt; &lt;script src="https://cdn.jsdelivr.net/npm/brython@3.11.3/brython_stdlib.js"&gt;&lt;/script&gt;<br/>🔹 這兩個做什麼？<br/>檔案 功能<br/>brython.min.js Brython 核心<br/>brython_stdlib.js Python 標準函式庫<br/>📌 沒有它們，瀏覽器看不懂 &lt;script type="text/python"&gt;</p>
+<p><br/>&lt;body onload="brython(1)"&gt;<br/>🔹 啟動 Brython<br/>網頁載入完成 → 啟動 Brython</p>
+<p>1 代表「debug 模式」</p>
+<p><strong>四、遊戲畫面 HTML</strong></p>
+<p>&lt;h2 style="text-align: center;"&gt;🕹️ 點擊測試：點擊移動中的圓形！&lt;/h2&gt;<br/>➡️ 遊戲標題</p>
+<p><br/>&lt;div id="brython_div1" style="width: 600px; height: 400px; margin: 20px auto;"&gt;&lt;/div&gt;<br/>🔹 遊戲場地<br/>寬：600px</p>
+<p>高：400px</p>
+<p>所有遊戲元素都動態加到這裡</p>
+<p><strong>五、為什麼要用 {% raw %}？</strong></p>
+<p>{% raw %} &lt;script type="text/python"&gt;<br/>🔹 解決的問題<br/>Brython 裡有：</p>
+<p>f"{score}"</p>
+<p>{}</p>
+<p>⚠️ Jinja2 會誤以為是模板語法</p>
+<p>➡️ {% raw %} 告訴 Jinja2：</p>
+<p>「這一段我不解析，原封不動交給瀏覽器」</p>
+<p><strong>六、Brython：匯入模組</strong></p>
+<p>from browser import document, timer, window, ajax import random import time<br/>🔹 每個模組用途<br/>模組 功能<br/>document 操作 DOM<br/>timer setTimeout / setInterval<br/>window JS 的 window<br/>ajax Ajax 請求<br/>random 隨機位置、顏色<br/>time 計時</p>
+<p><br/><strong>七、遊戲全域設定</strong></p>
+<p>GAME_DURATION = 30 score = 0 game_active = False<br/>變數 說明<br/>GAME_DURATION 遊戲時間（秒）<br/>score 玩家分數<br/>game_active 是否進行中</p>
+<p><br/><strong>八、初始化遊戲區（DOM 操作）</strong></p>
+<p>game_area = document["brython_div1"]<br/>➡️ 抓取 &lt;div id="brython_div1"&gt;</p>
+<p><br/>game_area.style.border = "3px solid #333" game_area.style.backgroundColor = "#e0e0ff" game_area.style.position = "relative"</p>
+<p>🔹 為什麼要 position: relative？</p>
+<p>👉 讓裡面的圓形可以用 absolute 定位</p>
+<p><strong>九、分數與時間顯示區</strong></p>
+<p>score_display = document.createElement("div") timer_display = document.createElement("div")<br/>左上角：分數</p>
+<p>右上角：倒數時間</p>
+<p>📌 這些都是 動態建立的 DOM 元素</p>
+<p><strong>十、目標圓形（遊戲核心）</strong></p>
+<p>target = document.createElement("div") target.style.width = "50px" target.style.height = "50px" target.style.borderRadius = "50%"<br/>➡️ 一個 50×50 的圓形</p>
+<p><br/>target.style.transition = "top 0.3s, left 0.3s"<br/>➡️ 平滑移動動畫</p>
+<p><strong>十一、移動圓形</strong></p>
+<p>def move_target():<br/>🔹 功能流程<br/>檢查遊戲是否進行中</p>
+<p>計算最大可移動範圍</p>
+<p>隨機產生新位置</p>
+<p>隨機顏色</p>
+<p>更新 top / left</p>
+<p>📌 min_y = 40<br/>→ 避免蓋住上方分數欄</p>
+<p><strong>十二、點擊事件</strong></p>
+<p>@target.bind("click") def hit_target(event):<br/>🔹 這裡很重要！<br/>只有點到圓形才會觸發</p>
+<p>不用額外計算距離</p>
+<p>流程：</p>
+<p>分數 +1</p>
+<p>更新顯示</p>
+<p>圓形立即移動</p>
+<p>stopPropagation() 防止事件冒泡</p>
+<p><strong>十三、Ajax 上傳分數（Brython → Flask）</strong></p>
+<p>req.open('POST', '{{ url_for("submit_score") }}', True)</p>
+<p>🔹 為什麼要 {% endraw %}？</p>
+<p>url_for() 必須由 Jinja2 處理</p>
+<p>Brython 不認得 Flask</p>
+<p>👉 這是 Flask + Brython 混用的標準寫法</p>
+<p><br/>json_payload = window.JSON.stringify({'score': final_score}) req.send(json_payload)<br/>➡️ 送出 JSON：</p>
+<p><br/>{ "score": 15 }</p>
+<p><br/><strong>十四、倒數計時與遊戲結束</strong></p>
+<p>def check_time():<br/>每秒執行：</p>
+<p>計算剩餘時間</p>
+<p>時間到：</p>
+<p>停止遊戲</p>
+<p>上傳分數</p>
+<p>顯示結束畫面</p>
+<p>清除移動計時器</p>
+<p><strong>十五、重新開始</strong></p>
+<p>def restart_game(event):<br/>隱藏結束畫面</p>
+<p>重新初始化遊戲</p>
+<p><strong>十六、遊戲啟動流程</strong></p>
+<p>def start_game(): score = 0 game_active = True check_time() move_target() timer.set_interval(move_target, 800)<br/>📌 啟動時會：</p>
+<p>分數歸零</p>
+<p>啟動倒數</p>
+<p>每 0.8 秒移動一次圓形</p>
+<p><br/>start_game()<br/>➡️ 網頁一打開就開始遊戲 🎮</p>
+<p></p>
+<h1>期末報告2(程式新功能)</h1>
+<p></p>
+<h2><span data-teams="true">我所添加的程式新功能</span></h2>
+<p><strong>我把程式改成：</strong></p>
+<p><strong>手機可玩</strong> → 除了 click 也支援 touchstart 事件</p>
+<p><strong>圓點顏色固定</strong> → 移除隨機顏色，設定固定顏色（例如 #ff4500）</p>
+<p><br/>以下是我的程式碼:</p>
+<p># --- 遊戲核心邏輯 ---</p>
+<p>def move_target():<br/> """移動目標元素"""<br/> if not game_active:<br/> return<br/> <br/> max_x = game_area.clientWidth - 50<br/> max_y = game_area.clientHeight - 50<br/> min_y = 40</p>
+<p>new_x = random.randint(0, max(0, max_x))<br/> new_y = random.randint(min_y, max(min_y, max_y))<br/> <br/> # 🔹 固定顏色，移除隨機顏色<br/> target.style.backgroundColor = "#ff4500"<br/> <br/> target.style.left = f"{new_x}px"<br/> target.style.top = f"{new_y}px"</p>
+<p># 🔹 同時綁定 click 與 touchstart 事件，手機也可觸發<br/>def hit_target(event):<br/> """點擊或觸碰目標時觸發"""<br/> global score<br/> if not game_active:<br/> return</p>
+<p>score += 1<br/> score_display.text = f"分數: {score}"<br/> move_target()<br/> event.stopPropagation()</p>
+<p>target.bind("click", hit_target)<br/>target.bind("touchstart", hit_target) # 🔹 新增手機觸控支援</p>
+<p><br/><strong>修改重點說明：</strong></p>
+<p><span style="background-color: #ffff99;">1.固定顏色</span></p>
+<p><span style="background-color: #ffff99;">target.style.backgroundColor = "#ff4500"</span></p>
+<p><br/><span style="background-color: #ffff99;">2.不再隨機產生 RGB。</span></p>
+<p><span style="background-color: #ffff99;">手機支援</span></p>
+<p><span style="background-color: #ffff99;">target.bind("touchstart", hit_target)</span></p>
+<p><br/><span style="background-color: #ffff99;">手機瀏覽器不一定觸發 click，加入 touchstart 才能觸碰圓點得分。</span></p>
+<p><span style="background-color: #ffff99;">3.原有動畫仍保留</span></p>
+<p><span style="background-color: #ffff99;">圓形移動依舊平滑 (transition)</span></p>
+<p><br/><strong>我再次修改，把遊戲改成手機友善版，包含：</strong></p>
+<p><span style="background-color: #ffff99;">畫面自適應手機寬度（最大 600px，最小 320px）</span></p>
+<p><span style="background-color: #ffff99;">圓點固定顏色</span></p>
+<p><span style="background-color: #ffff99;">手機觸控支援</span></p>
+<p>下面是完整的修改範例（只修改 HTML 與 Brython 部分）：</p>
+<p>&lt;div id="brython_div1" style="width: 100%; max-width: 600px; min-width: 320px; height: 400px; margin: 20px auto;"&gt;&lt;/div&gt;</p>
+<p><br/>寬度用 100%，手機會自動縮放</p>
+<p>max-width: 600px → 桌機不會太大</p>
+<p>min-width: 320px → 手機螢幕最小寬度</p>
+<p># --- 遊戲核心邏輯 ---</p>
+<p>def move_target():<br/> """移動目標元素"""<br/> if not game_active:<br/> return<br/> <br/> max_x = game_area.clientWidth - 50<br/> max_y = game_area.clientHeight - 50<br/> min_y = 40</p>
+<p>new_x = random.randint(0, max(0, max_x))<br/> new_y = random.randint(min_y, max(min_y, max_y))<br/> <br/> # 🔹 固定顏色<br/> target.style.backgroundColor = "#ff4500"<br/> <br/> target.style.left = f"{new_x}px"<br/> target.style.top = f"{new_y}px"</p>
+<p># 🔹 同時綁定 click 與 touchstart，手機可玩<br/>def hit_target(event):<br/> global score<br/> if not game_active:<br/> return</p>
+<p>score += 1<br/> score_display.text = f"分數: {score}"<br/> move_target()<br/> event.stopPropagation()</p>
+<p>target.bind("click", hit_target)<br/>target.bind("touchstart", hit_target) # 🔹 手機觸控支援</p>
+<p>🔹 額外建議：畫面適應性</p>
+<p>若希望圓形大小也隨螢幕寬度自動縮放：</p>
+<p>target_size = min(50, game_area.clientWidth * 0.1)<br/>target.style.width = f"{target_size}px"<br/>target.style.height = f"{target_size}px"</p>
+<p><br/>手機螢幕小時，圓形會自動縮小到 10% 的畫面寬度</p>
+<p>桌機維持最大 50px</p>
+<p><br/><strong>修改後效果：</strong></p>
+<p><span style="background-color: #ffff99;">手機與平板都可以觸碰圓點得分</span></p>
+<p><span style="background-color: #ffff99;">圓點顏色固定，遊戲更穩定</span></p>
+<p><span style="background-color: #ffff99;">手機自適應寬度，遊戲畫面不會超出螢幕</span></p>
+<p><br/><strong>最後整合:</strong></p>
+<p>{% extends "base.html" %}</p>
+<p>{% block title %}Brython 遊戲{% endblock %}</p>
+<p>{% block content %}<br/> &lt;script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.11.3/brython.min.js"&gt;&lt;/script&gt;<br/> &lt;script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.11.3/brython_stdlib.js"&gt;&lt;/script&gt;<br/> <br/> &lt;body onload="brython(1)"&gt;</p>
+<p>&lt;h2 style="text-align: center;"&gt;🕹️ 點擊測試：點擊移動中的圓形！&lt;/h2&gt;</p>
+<p>&lt;div id="brython_div1" style="width: 100%; max-width: 600px; min-width: 320px; height: 400px; margin: 20px auto;"&gt;<br/> &lt;/div&gt;</p>
+<p>{% raw %} <br/> &lt;script type="text/python"&gt;<br/> from browser import document, timer, window, ajax<br/> import random<br/> import time</p>
+<p># --- 遊戲設定 ---<br/> GAME_DURATION = 30 <br/> score = 0<br/> game_active = False</p>
+<p># --- 獲取 DOM 元素及初始化 ---<br/> game_area = document["brython_div1"]<br/> game_area.style.border = "3px solid #333"<br/> game_area.style.backgroundColor = "#e0e0ff"<br/> game_area.style.position = "relative"<br/> game_area.style.overflow = "hidden"<br/> game_area.style.cursor = "crosshair"</p>
+<p># 分數與時間顯示<br/> score_display = document.createElement("div")<br/> score_display.style.position = "absolute"<br/> score_display.style.top = "10px"<br/> score_display.style.left = "10px"<br/> score_display.style.fontSize = "1.2em"<br/> score_display.style.fontWeight = "bold"<br/> score_display.style.backgroundColor = "rgba(255, 255, 255, 0.7)"<br/> score_display.style.padding = "5px"<br/> game_area &lt;= score_display</p>
+<p>timer_display = document.createElement("div")<br/> timer_display.style.position = "absolute"<br/> timer_display.style.top = "10px"<br/> timer_display.style.right = "10px"<br/> timer_display.style.fontSize = "1.2em"<br/> timer_display.style.fontWeight = "bold"<br/> timer_display.style.backgroundColor = "rgba(255, 255, 255, 0.7)"<br/> timer_display.style.padding = "5px"<br/> game_area &lt;= timer_display</p>
+<p># 創建目標圓點<br/> target = document.createElement("div")<br/> target.id = "target"<br/> target.style.width = "50px"<br/> target.style.height = "50px"<br/> target.style.backgroundColor = "#ff4500" # 🔹 固定顏色<br/> target.style.position = "absolute"<br/> target.style.borderRadius = "50%"<br/> target.style.cursor = "pointer"<br/> target.style.transition = "background-color 0.1s, top 0.3s, left 0.3s"<br/> game_area &lt;= target</p>
+<p># 遊戲結束訊息<br/> game_over_msg = document.createElement("div")<br/> game_over_msg.style.position = "absolute"<br/> game_over_msg.style.top = "50%"<br/> game_over_msg.style.left = "50%"<br/> game_over_msg.style.transform = "translate(-50%, -50%)"<br/> game_over_msg.style.backgroundColor = "rgba(0, 0, 0, 0.9)"<br/> game_over_msg.style.color = "white"<br/> game_over_msg.style.padding = "30px"<br/> game_over_msg.style.borderRadius = "10px"<br/> game_over_msg.style.fontSize = "2em"<br/> game_over_msg.style.zIndex = "100"<br/> game_over_msg.style.display = "none"<br/> game_over_msg.style.textAlign = "center"<br/> game_area &lt;= game_over_msg</p>
+<p># --- 遊戲核心邏輯 ---<br/> def move_target():<br/> if not game_active:<br/> return<br/> <br/> max_x = game_area.clientWidth - 50<br/> max_y = game_area.clientHeight - 50<br/> min_y = 40</p>
+<p>new_x = random.randint(0, max(0, max_x))<br/> new_y = random.randint(min_y, max(min_y, max_y))<br/> <br/> target.style.left = f"{new_x}px"<br/> target.style.top = f"{new_y}px"<br/> # 🔹 顏色固定，不再隨機<br/> target.style.backgroundColor = "#ff4500"</p>
+<p># 🔹 點擊或觸碰都能得分（手機可玩）<br/> def hit_target(event):<br/> global score<br/> if not game_active:<br/> return</p>
+<p>score += 1<br/> score_display.text = f"分數: {score}"<br/> move_target()<br/> event.stopPropagation()</p>
+<p>target.bind("click", hit_target)<br/> target.bind("touchstart", hit_target) # 🔹 手機觸控</p>
+<p>def submit_score_to_server(final_score):<br/> def on_complete(req):<br/> if req.status == 200:<br/> window.alert("分數成功上傳至英雄榜！")<br/> else:<br/> try:<br/> resp = window.JSON.parse(req.text)<br/> msg = resp.message<br/> except:<br/> msg = "請檢查登入狀態或伺服器狀態，或確保您已登入。"<br/> window.alert(f"分數上傳失敗 ({req.status})！{msg}")<br/> <br/> req = ajax.ajax()<br/> req.bind('complete', on_complete)<br/> <br/> {% endraw %}<br/> req.open('POST', '{{ url_for("submit_score") }}', True)<br/> {% raw %}<br/> <br/> req.set_header('Content-Type', 'application/json')<br/> data = {'score': final_score}<br/> json_payload = window.JSON.stringify(data)<br/> req.send(json_payload)</p>
+<p>def restart_game(event):<br/> game_over_msg.style.display = "none"<br/> start_game()<br/> event.stopPropagation()</p>
+<p>def check_time():<br/> global game_active<br/> remaining = int(game_over_time - time.time())<br/> <br/> if remaining &lt;= 0:<br/> timer_display.text = "時間: 0s"<br/> if game_active:<br/> game_active = False<br/> submit_score_to_server(score)<br/> game_over_msg.innerHTML = f"遊戲結束！&lt;br&gt;最終分數: {score}"<br/> <br/> restart_btn = document.createElement("button")<br/> restart_btn.text = "重新開始"<br/> restart_btn.style.marginTop = "15px"<br/> restart_btn.style.padding = "10px 20px"<br/> restart_btn.style.fontSize = "0.7em"<br/> restart_btn.style.cursor = "pointer"<br/> restart_btn.bind("click", restart_game)<br/> <br/> game_over_msg &lt;= document.createElement("br")<br/> game_over_msg &lt;= restart_btn<br/> game_over_msg.style.display = "block"<br/> <br/> timer.clear_interval(move_interval_handle)<br/> else:<br/> timer_display.text = f"時間: {remaining}s"<br/> timer.set_timeout(check_time, 1000)</p>
+<p># --- 遊戲啟動 ---<br/> def start_game():<br/> global game_active, game_over_time, move_interval_handle, score<br/> score = 0<br/> game_active = True<br/> score_display.text = "分數: 0"<br/> timer_display.text = f"時間: {GAME_DURATION}s"<br/> <br/> game_over_time = time.time() + GAME_DURATION<br/> <br/> check_time()<br/> move_target()<br/> move_interval_handle = timer.set_interval(move_target, 800)</p>
+<p># 啟動遊戲<br/> start_game()</p>
+<p>&lt;/script&gt;<br/> {% endraw %}<br/> <br/> &lt;/body&gt;<br/>{% endblock %}</p>
+<p><br/><strong>修改重點總結：</strong></p>
+<p><span style="background-color: #ffff99;">手機自適應畫面：</span></p>
+<p><span style="background-color: #ffff99;">width: 100%; max-width: 600px; min-width: 320px;</span></p>
+<p><br/><span style="background-color: #ffff99;">固定圓點顏色：</span></p>
+<p><span style="background-color: #ffff99;">target.style.backgroundColor = "#ff4500"</span></p>
+<p><br/><span style="background-color: #ffff99;">手機觸控支援：</span></p>
+<p><span style="background-color: #ffff99;">target.bind("touchstart", hit_target)</span></p>
+<p><br/><strong>這個版本：</strong></p>
+<p>手機和平板都能正常點擊 / 觸碰圓點</p>
+<p>畫面自動縮放，不會超出手機螢幕</p>
+<p>顏色固定，遊戲更穩定</p>
+<p><span data-teams="true"></span></p>
 <p></p>

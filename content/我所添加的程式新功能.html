@@ -1,0 +1,275 @@
+<!DOCTYPE html><html>
+        <head>
+        <title>cmsimde_site</title>
+        <meta charset="utf-8">
+<meta property="head" content="H2">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/magnific-popup.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/jquery-ui.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/flaticon/font/flaticon.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/aos.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/style.css">
+        <link rel="shortcut icon" href="./../cmsimde/static/favicons.png">
+        
+        <style type='text/css'>
+            .site-section {
+            background-color: #FFFF;
+            padding: 40px 40px;
+            }
+            body > div > div.dropdown.open {
+                display: block;
+            }
+        </style>
+    
+        <!-- <script src="./../cmsimde/static/jquery.js"></script> -->
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+        <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/normalize.min.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch_set.js"></script>
+        <script src="tipuesearch_content.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/tipuesearch.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch.js"></script>
+        <!-- for Wink3 客製化關閉 -->
+        <!--
+        <link rel="stylesheet" type="text/css" href="./../cmsimde/static/winkPlayer.css" />
+        <script type="text/javascript" src="./../cmsimde/static/winkPlayer.js"></script>
+        -->
+        <script>
+            /* original tipuesearch
+            $(document).ready(function() {
+                 $('#tipue_search_input').tipuesearch();
+            });
+            */
+            // customed doSearch
+            function doSearch() {
+                $('#tipue_search_input').tipuesearch({
+                    newWindow: true, 
+                    minimumLength: 2,
+                    wholeWords: false, // for search 中文
+                });
+            }
+            $(document).ready(doSearch);
+        </script>
+        
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDiff.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushHaxe.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPowerShell.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushMojo.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushWbt.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCSharp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDart.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushRust.js"></script>
+<link type="text/css" rel="stylesheet" href="./../cmsimde/static/syntaxhighlighter/css/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+<!-- 暫時不用
+<script src="./../cmsimde/static/fengari-web.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/Cango-13v08-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/CangoAxes-4v01-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/gearUtils-05.js"></script>
+-->
+<!-- for Brython 暫時不用
+<script src="https://scrum-3.github.io/web/brython/brython.js"></script>
+<script src="https://scrum-3.github.io/web/brython/brython_stdlib.js"></script>
+-->
+<style>
+img.add_border {
+    border: 3px solid blue;
+}
+</style>
+
+</head>
+<body>
+<div class='container'><nav>
+        
+    <div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+    
+            <header class="site-navbar py-4 bg-white" role="banner">
+              <div class="container">
+                <div class="row align-items-center">
+                <h1>設計一甲41423154籃健恩  1a-ag2</h1>
+                <div class="pl-4">
+                    <form>
+                    <input type="text" placeholder="Search" name="q" id="tipue_search_input" pattern=".{2,}" title="At least 2 characters" required>
+                    </form>
+                </div>
+                  <!-- <div class="col-11 col-xl-2">
+                    <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0">設計一甲41423154籃健恩  1a-ag2</a></h1> 
+                  </div>
+                  -->
+                  <div class="col-12 col-md-10 d-none d-xl-block">
+                    <nav class="site-navigation position-relative text-right" role="navigation">
+    <ul class='site-menu js-clone-nav mr-auto d-none d-lg-block'>
+                        <li class="active has-children"><a href="index.html">Home</a>
+                        <ul class="dropdown">
+                            <li><a href="sitemap.html">SMap</a></li>
+                            <li><a href="./../reveal/index.html">reveal</a></li>
+                            <li><a href="./../blog/index.html">blog</a></li>
+                        </ul>
+                      </li>
+                     <li><a href='歡迎歡迎.html'>歡迎歡迎</a><li class='has-children'><a href='Brython指令區.html'>Brython指令區</a><ul class='dropdown'><li><a href='Brython.html'>Brython</a></li></ul><li class='has-children'><a href='Pyodide指令區.html'>Pyodide指令區</a><ul class='dropdown'><li><a href='Pyodide.html'>Pyodide</a></li></ul><li class='has-children'><a href='孤獨組長....html'>孤獨組長...</a><ul class='dropdown'><li><a href='組員失蹤+前帳號被封鎖QQ.html'>組員失蹤+前帳號被封鎖QQ</a></li></ul><li class='has-children'><a href='w12.html'>w12</a><ul class='dropdown'><li><a href='國旗旋轉.html'>國旗旋轉</a><li><a href='機器人七段程式碼.html'>機器人七段程式碼</a></li></ul><li class='has-children'><a href='期末報告1(w14三個操作).html'>期末報告1(w14三個操作)</a><ul class='dropdown'><li><a href='操作一、操作二.html'>操作一、操作二</a><li><a href='第二個程式的執行.html'>第二個程式的執行</a><li><a href='第三個憤怒鳥小遊戲.html'>第三個憤怒鳥小遊戲</a><li><a href='第二個程式的改良.html'>第二個程式的改良</a></li></ul><li class='has-children'><a href='期末報告2(程式新功能).html'>期末報告2(程式新功能)</a><ul class='dropdown'><li><a href='我所添加的程式新功能.html'>我所添加的程式新功能</a></li>
+                      </ul>
+                </nav>
+              </div>
+              <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+              </div>
+
+            </div>
+          </div>
+          
+        </header>
+    <div id="tipue_search_content">期末報告2(程式新功能) << <a href='期末報告2(程式新功能).html'>Previous</a> <br /><h1>我所添加的程式新功能</h1>
+<p><strong>我把程式改成：</strong></p>
+<p><strong>手機可玩</strong> → 除了 click 也支援 touchstart 事件</p>
+<p><strong>圓點顏色固定</strong> → 移除隨機顏色，設定固定顏色（例如 #ff4500）</p>
+<p><br/>以下是我的程式碼:</p>
+<p># --- 遊戲核心邏輯 ---</p>
+<p>def move_target():<br/> """移動目標元素"""<br/> if not game_active:<br/> return<br/> <br/> max_x = game_area.clientWidth - 50<br/> max_y = game_area.clientHeight - 50<br/> min_y = 40</p>
+<p>new_x = random.randint(0, max(0, max_x))<br/> new_y = random.randint(min_y, max(min_y, max_y))<br/> <br/> # 🔹 固定顏色，移除隨機顏色<br/> target.style.backgroundColor = "#ff4500"<br/> <br/> target.style.left = f"{new_x}px"<br/> target.style.top = f"{new_y}px"</p>
+<p># 🔹 同時綁定 click 與 touchstart 事件，手機也可觸發<br/>def hit_target(event):<br/> """點擊或觸碰目標時觸發"""<br/> global score<br/> if not game_active:<br/> return</p>
+<p>score += 1<br/> score_display.text = f"分數: {score}"<br/> move_target()<br/> event.stopPropagation()</p>
+<p>target.bind("click", hit_target)<br/>target.bind("touchstart", hit_target) # 🔹 新增手機觸控支援</p>
+<p><br/><strong>修改重點說明：</strong></p>
+<p><span style="background-color: #ffff99;">1.固定顏色</span></p>
+<p><span style="background-color: #ffff99;">target.style.backgroundColor = "#ff4500"</span></p>
+<p><br/><span style="background-color: #ffff99;">2.不再隨機產生 RGB。</span></p>
+<p><span style="background-color: #ffff99;">手機支援</span></p>
+<p><span style="background-color: #ffff99;">target.bind("touchstart", hit_target)</span></p>
+<p><br/><span style="background-color: #ffff99;">手機瀏覽器不一定觸發 click，加入 touchstart 才能觸碰圓點得分。</span></p>
+<p><span style="background-color: #ffff99;">3.原有動畫仍保留</span></p>
+<p><span style="background-color: #ffff99;">圓形移動依舊平滑 (transition)</span></p>
+<p><br/><strong>我再次修改，把遊戲改成手機友善版，包含：</strong></p>
+<p><span style="background-color: #ffff99;">畫面自適應手機寬度（最大 600px，最小 320px）</span></p>
+<p><span style="background-color: #ffff99;">圓點固定顏色</span></p>
+<p><span style="background-color: #ffff99;">手機觸控支援</span></p>
+<p>下面是完整的修改範例（只修改 HTML 與 Brython 部分）：</p>
+<p>&lt;div id="brython_div1" style="width: 100%; max-width: 600px; min-width: 320px; height: 400px; margin: 20px auto;"&gt;&lt;/div&gt;</p>
+<p><br/>寬度用 100%，手機會自動縮放</p>
+<p>max-width: 600px → 桌機不會太大</p>
+<p>min-width: 320px → 手機螢幕最小寬度</p>
+<p># --- 遊戲核心邏輯 ---</p>
+<p>def move_target():<br/> """移動目標元素"""<br/> if not game_active:<br/> return<br/> <br/> max_x = game_area.clientWidth - 50<br/> max_y = game_area.clientHeight - 50<br/> min_y = 40</p>
+<p>new_x = random.randint(0, max(0, max_x))<br/> new_y = random.randint(min_y, max(min_y, max_y))<br/> <br/> # 🔹 固定顏色<br/> target.style.backgroundColor = "#ff4500"<br/> <br/> target.style.left = f"{new_x}px"<br/> target.style.top = f"{new_y}px"</p>
+<p># 🔹 同時綁定 click 與 touchstart，手機可玩<br/>def hit_target(event):<br/> global score<br/> if not game_active:<br/> return</p>
+<p>score += 1<br/> score_display.text = f"分數: {score}"<br/> move_target()<br/> event.stopPropagation()</p>
+<p>target.bind("click", hit_target)<br/>target.bind("touchstart", hit_target) # 🔹 手機觸控支援</p>
+<p>🔹 額外建議：畫面適應性</p>
+<p>若希望圓形大小也隨螢幕寬度自動縮放：</p>
+<p>target_size = min(50, game_area.clientWidth * 0.1)<br/>target.style.width = f"{target_size}px"<br/>target.style.height = f"{target_size}px"</p>
+<p><br/>手機螢幕小時，圓形會自動縮小到 10% 的畫面寬度</p>
+<p>桌機維持最大 50px</p>
+<p><br/><strong>修改後效果：</strong></p>
+<p><span style="background-color: #ffff99;">手機與平板都可以觸碰圓點得分</span></p>
+<p><span style="background-color: #ffff99;">圓點顏色固定，遊戲更穩定</span></p>
+<p><span style="background-color: #ffff99;">手機自適應寬度，遊戲畫面不會超出螢幕</span></p>
+<p><br/><strong>最後整合:</strong></p>
+<p>{% extends "base.html" %}</p>
+<p>{% block title %}Brython 遊戲{% endblock %}</p>
+<p>{% block content %}<br/> &lt;script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.11.3/brython.min.js"&gt;&lt;/script&gt;<br/> &lt;script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.11.3/brython_stdlib.js"&gt;&lt;/script&gt;<br/> <br/> &lt;body onload="brython(1)"&gt;</p>
+<p>&lt;h2 style="text-align: center;"&gt;🕹️ 點擊測試：點擊移動中的圓形！&lt;/h2&gt;</p>
+<p>&lt;div id="brython_div1" style="width: 100%; max-width: 600px; min-width: 320px; height: 400px; margin: 20px auto;"&gt;<br/> &lt;/div&gt;</p>
+<p>{% raw %} <br/> &lt;script type="text/python"&gt;<br/> from browser import document, timer, window, ajax<br/> import random<br/> import time</p>
+<p># --- 遊戲設定 ---<br/> GAME_DURATION = 30 <br/> score = 0<br/> game_active = False</p>
+<p># --- 獲取 DOM 元素及初始化 ---<br/> game_area = document["brython_div1"]<br/> game_area.style.border = "3px solid #333"<br/> game_area.style.backgroundColor = "#e0e0ff"<br/> game_area.style.position = "relative"<br/> game_area.style.overflow = "hidden"<br/> game_area.style.cursor = "crosshair"</p>
+<p># 分數與時間顯示<br/> score_display = document.createElement("div")<br/> score_display.style.position = "absolute"<br/> score_display.style.top = "10px"<br/> score_display.style.left = "10px"<br/> score_display.style.fontSize = "1.2em"<br/> score_display.style.fontWeight = "bold"<br/> score_display.style.backgroundColor = "rgba(255, 255, 255, 0.7)"<br/> score_display.style.padding = "5px"<br/> game_area &lt;= score_display</p>
+<p>timer_display = document.createElement("div")<br/> timer_display.style.position = "absolute"<br/> timer_display.style.top = "10px"<br/> timer_display.style.right = "10px"<br/> timer_display.style.fontSize = "1.2em"<br/> timer_display.style.fontWeight = "bold"<br/> timer_display.style.backgroundColor = "rgba(255, 255, 255, 0.7)"<br/> timer_display.style.padding = "5px"<br/> game_area &lt;= timer_display</p>
+<p># 創建目標圓點<br/> target = document.createElement("div")<br/> target.id = "target"<br/> target.style.width = "50px"<br/> target.style.height = "50px"<br/> target.style.backgroundColor = "#ff4500" # 🔹 固定顏色<br/> target.style.position = "absolute"<br/> target.style.borderRadius = "50%"<br/> target.style.cursor = "pointer"<br/> target.style.transition = "background-color 0.1s, top 0.3s, left 0.3s"<br/> game_area &lt;= target</p>
+<p># 遊戲結束訊息<br/> game_over_msg = document.createElement("div")<br/> game_over_msg.style.position = "absolute"<br/> game_over_msg.style.top = "50%"<br/> game_over_msg.style.left = "50%"<br/> game_over_msg.style.transform = "translate(-50%, -50%)"<br/> game_over_msg.style.backgroundColor = "rgba(0, 0, 0, 0.9)"<br/> game_over_msg.style.color = "white"<br/> game_over_msg.style.padding = "30px"<br/> game_over_msg.style.borderRadius = "10px"<br/> game_over_msg.style.fontSize = "2em"<br/> game_over_msg.style.zIndex = "100"<br/> game_over_msg.style.display = "none"<br/> game_over_msg.style.textAlign = "center"<br/> game_area &lt;= game_over_msg</p>
+<p># --- 遊戲核心邏輯 ---<br/> def move_target():<br/> if not game_active:<br/> return<br/> <br/> max_x = game_area.clientWidth - 50<br/> max_y = game_area.clientHeight - 50<br/> min_y = 40</p>
+<p>new_x = random.randint(0, max(0, max_x))<br/> new_y = random.randint(min_y, max(min_y, max_y))<br/> <br/> target.style.left = f"{new_x}px"<br/> target.style.top = f"{new_y}px"<br/> # 🔹 顏色固定，不再隨機<br/> target.style.backgroundColor = "#ff4500"</p>
+<p># 🔹 點擊或觸碰都能得分（手機可玩）<br/> def hit_target(event):<br/> global score<br/> if not game_active:<br/> return</p>
+<p>score += 1<br/> score_display.text = f"分數: {score}"<br/> move_target()<br/> event.stopPropagation()</p>
+<p>target.bind("click", hit_target)<br/> target.bind("touchstart", hit_target) # 🔹 手機觸控</p>
+<p>def submit_score_to_server(final_score):<br/> def on_complete(req):<br/> if req.status == 200:<br/> window.alert("分數成功上傳至英雄榜！")<br/> else:<br/> try:<br/> resp = window.JSON.parse(req.text)<br/> msg = resp.message<br/> except:<br/> msg = "請檢查登入狀態或伺服器狀態，或確保您已登入。"<br/> window.alert(f"分數上傳失敗 ({req.status})！{msg}")<br/> <br/> req = ajax.ajax()<br/> req.bind('complete', on_complete)<br/> <br/> {% endraw %}<br/> req.open('POST', '{{ url_for("submit_score") }}', True)<br/> {% raw %}<br/> <br/> req.set_header('Content-Type', 'application/json')<br/> data = {'score': final_score}<br/> json_payload = window.JSON.stringify(data)<br/> req.send(json_payload)</p>
+<p>def restart_game(event):<br/> game_over_msg.style.display = "none"<br/> start_game()<br/> event.stopPropagation()</p>
+<p>def check_time():<br/> global game_active<br/> remaining = int(game_over_time - time.time())<br/> <br/> if remaining &lt;= 0:<br/> timer_display.text = "時間: 0s"<br/> if game_active:<br/> game_active = False<br/> submit_score_to_server(score)<br/> game_over_msg.innerHTML = f"遊戲結束！&lt;br&gt;最終分數: {score}"<br/> <br/> restart_btn = document.createElement("button")<br/> restart_btn.text = "重新開始"<br/> restart_btn.style.marginTop = "15px"<br/> restart_btn.style.padding = "10px 20px"<br/> restart_btn.style.fontSize = "0.7em"<br/> restart_btn.style.cursor = "pointer"<br/> restart_btn.bind("click", restart_game)<br/> <br/> game_over_msg &lt;= document.createElement("br")<br/> game_over_msg &lt;= restart_btn<br/> game_over_msg.style.display = "block"<br/> <br/> timer.clear_interval(move_interval_handle)<br/> else:<br/> timer_display.text = f"時間: {remaining}s"<br/> timer.set_timeout(check_time, 1000)</p>
+<p># --- 遊戲啟動 ---<br/> def start_game():<br/> global game_active, game_over_time, move_interval_handle, score<br/> score = 0<br/> game_active = True<br/> score_display.text = "分數: 0"<br/> timer_display.text = f"時間: {GAME_DURATION}s"<br/> <br/> game_over_time = time.time() + GAME_DURATION<br/> <br/> check_time()<br/> move_target()<br/> move_interval_handle = timer.set_interval(move_target, 800)</p>
+<p># 啟動遊戲<br/> start_game()</p>
+<p>&lt;/script&gt;<br/> {% endraw %}<br/> <br/> &lt;/body&gt;<br/>{% endblock %}</p>
+<p><br/><strong>修改重點總結：</strong></p>
+<p><span style="background-color: #ffff99;">手機自適應畫面：</span></p>
+<p><span style="background-color: #ffff99;">width: 100%; max-width: 600px; min-width: 320px;</span></p>
+<p><br/><span style="background-color: #ffff99;">固定圓點顏色：</span></p>
+<p><span style="background-color: #ffff99;">target.style.backgroundColor = "#ff4500"</span></p>
+<p><br/><span style="background-color: #ffff99;">手機觸控支援：</span></p>
+<p><span style="background-color: #ffff99;">target.bind("touchstart", hit_target)</span></p>
+<p><br/><strong>這個版本：</strong></p>
+<p>手機和平板都能正常點擊 / 觸碰圓點</p>
+<p>畫面自動縮放，不會超出手機螢幕</p>
+<p>顏色固定，遊戲更穩定</p>
+<p><span data-teams="true"></span></p>
+<p></p><br />期末報告2(程式新功能) << <a href='期末報告2(程式新功能).html'>Previous</a> </div>
+        
+    <!-- footer -->
+      <div class="container">
+        <div class="row pt-3 mx-auto">
+            <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+        </div>
+      </div>
+    <!-- for footer -->
+    
+        </div> <!-- for site wrap -->
+            <!-- <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script> -->
+            <script src="../cmsimde/static/chimper/js/jquery-migrate-3.0.1.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery-ui.js"></script>
+            <script src="../cmsimde/static/chimper/js/popper.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/owl.carousel.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.stellar.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.countdown.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.magnific-popup.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap-datepicker.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/aos.js"></script>
+            <!--
+            <script src="../cmsimde/static/chimper/js/typed.js"></script>
+                    <script>
+                    var typed = new Typed('.typed-words', {
+                    strings: ["Web Apps"," WordPress"," Mobile Apps"],
+                    typeSpeed: 80,
+                    backSpeed: 80,
+                    backDelay: 4000,
+                    startDelay: 1000,
+                    loop: true,
+                    showCursor: true
+                    });
+                    </script>
+            -->
+            <script src="../cmsimde/static/chimper/js/main.js"></script>
+        
+<!-- 啟用 LaTeX equations 編輯 -->
+  <!-- <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\(', '\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>-->
+    </body></html>
+        
