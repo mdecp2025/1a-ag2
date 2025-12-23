@@ -1104,7 +1104,7 @@ pyodide.runPython(code);
 <p>end_time = time.time() + GAME_DURATION<br/> update_hud()<br/> spawn_target()<br/> check_time()</p>
 <p>start_game()<br/>&lt;/script&gt;<br/>{% endraw %}</p>
 <p>&lt;/body&gt;<br/>{% endblock %}</p>
-<h3><span style="background-color: #ffff00;">Aim Lab版本整合成完整的、修整過的版本，加入</span></h3>
+<h3><span style="background-color: #ffff00;">Aim Lab版本整合成完整的、修整過的版本，加入...</span></h3>
 <p>圓點顏色：亮天藍 #00aaff</p>
 <p>命中閃爍效果</p>
 <p>Miss 點擊紅色閃爍效果</p>
@@ -1147,3 +1147,14 @@ pyodide.runPython(code);
 <p>end_time = time.time() + GAME_DURATION<br/> update_hud()<br/> spawn_target()<br/> check_time()</p>
 <p>start_game()<br/>&lt;/script&gt;<br/>{% endraw %}</p>
 <p>&lt;/body&gt;<br/>{% endblock %}</p>
+<p><span style="background-color: #ffff00;"><strong>🔹 改進說明</strong></span></p>
+<p>圓點顏色固定亮天藍：#00aaff</p>
+<p>命中閃白：命中瞬間變白，0.1 秒後回亮天藍</p>
+<p>Miss 閃紅：點擊空白背景時背景變暗紅，0.1 秒後恢復</p>
+<p>HUD 顯示：</p>
+<p>Hits（命中次數）</p>
+<p>Shots（射擊次數）</p>
+<p>Accuracy（命中率）</p>
+<p>Avg RT（平均反應時間毫秒）</p>
+<p>計時器：30 秒倒數</p>
+<p>Ajax 上傳分數：遊戲結束自動提交</p>
