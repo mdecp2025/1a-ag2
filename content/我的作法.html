@@ -2,7 +2,7 @@
         <head>
         <title>cmsimde_site</title>
         <meta charset="utf-8">
-<meta property="head" content="H2">
+<meta property="head" content="H3">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
@@ -142,9 +142,107 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">第二個程式的執行 << <a href='第二個程式的執行.html'>Previous</a> <a href='期末報告2(程式新功能).html'>Next</a> >> 期末報告2(程式新功能)<br /><h1>第三個憤怒鳥小遊戲</h1>
-<p><span data-teams="true"><span>影片:<a href="https://youtu.be/Mebi7DRFnMc">https://youtu.be/Mebi7DRFnMc</a></span></span></p>
-<br />第二個程式的執行 << <a href='第二個程式的執行.html'>Previous</a> <a href='期末報告2(程式新功能).html'>Next</a> >> 期末報告2(程式新功能)</div>
+    <div id="tipue_search_content">一般作法 << <a href='一般作法.html'>Previous</a> <a href='後來大家都要編輯需要中止同步.html'>Next</a> >> 後來大家都要編輯需要中止同步<br /><h1>我的作法</h1>
+<p>1.最初:<span style="background-color: #ffcc99;">鏡射</span>自己的<span style="background-color: #ffcc99;">個人倉儲網站</span>的個人網站。</p>
+<p>2.一開始先<span style="background-color: #ffcc99;">同步</span>自己的個人倉儲<span style="background-color: #ffcc99;">到團體</span></p>
+<p>以下是詢問AI的過程:</p>
+<p><strong>我:</strong></p>
+<p>我現在有一個個人github倉儲，我該怎麼樣把我這一個倉儲完全複製(包括修改歷程)到另一個分組倉儲?</p>
+<p><strong>AI:</strong></p>
+<p>要完整複製一個 GitHub 倉儲（包含所有 commit / branch / tag 的歷史）到另一個分組倉儲，最正確、乾淨、不會漏歷史的方法是用 mirror（鏡像）推送。</p>
+<p>下面我分成「✅推薦做法」與「⚠️常見錯誤」來說。</p>
+<p>✅ 推薦做法：git clone --mirror（完整保留歷史）<br/>🎯 適用情境</p>
+<p>你有 個人 repo想把它 100% 原封不動複製到 分組 repo</p>
+<p>包含：所有 commit</p>
+<p>所有 branch</p>
+<p>所有 tag</p>
+<p>所有歷史</p>
+<p>Step 1️⃣ 複製「個人倉儲」為鏡像<br/>git clone --mirror https://github.com/你的帳號/個人倉儲.git</p>
+<p><br/>這會產生一個資料夾，例如：</p>
+<p>個人倉儲.git/</p>
+<p><br/>⚠️ 注意：這不是一般的 clone，不要進去改檔案</p>
+<p>Step 2️⃣ 進入鏡像倉儲資料夾<br/>cd 個人倉儲.git</p>
+<p>Step 3️⃣ 設定新的 remote（分組倉儲）<br/>git remote set-url --push origin https://github.com/分組帳號/分組倉儲.git</p>
+<p><br/>（你可以用 git remote -v 確認）</p>
+<p>Step 4️⃣ 推送「所有歷史」到分組倉儲<br/>git push --mirror</p>
+<p><br/>🎉 完成！</p>
+<p>分組倉儲現在會有：</p>
+<p>完整 commit 紀錄</p>
+<p>所有分支</p>
+<p>所有 tag<br/>→ 跟你個人倉儲一模一樣</p>
+<p>🧪 確認是否成功（可選）</p>
+<p>到 GitHub 分組倉儲頁面確認：</p>
+<p>Commit 歷史有沒有完整</p>
+<p>分支是否齊全</p>
+<p>⚠️ 常見錯誤（不推薦）<br/>❌ 只做這樣：<br/>git remote add origin ...<br/>git push</p>
+<p><br/>👉 只會推目前 branch<br/>👉 歷史可能不完整<br/>👉 tag / 其他 branch 會消失</p>
+<p>🧠 如果你「之後要繼續在分組 repo 開發」<br/>做完 mirror 後，重新正常 clone 一次分組 repo：<br/>git clone https://github.com/分組帳號/分組倉儲.git</p>
+<p><br/>然後之後都用這個 repo 開發即可。</p>
+<p>🆘 特殊情況提醒<br/>情況 解法<br/>分組 repo 已經有內容 需要先刪 repo 或確定你要覆蓋<br/>沒有 push 權限 要請組長把你加成 collaborator<br/><br/></p>
+<p><strong>我:</strong></p>
+<p>我有在自己個人倉儲上傳新的內容，但沒有跟團體倉儲同步上傳新的內容。我該怎麼一起同步到團體倉儲裡?讓我個人的倉儲更新的內容可以跟團體倉儲同步。</p>
+<p><strong>AI:</strong></p>
+<p>這個問題問得非常好，而且很常見 👍<br/>現在你的狀況是「兩個倉儲已經分家」，我幫你用最安全、不會被老師誤會的方式處理。</p>
+<p>🎯 你現在的狀態（重點釐清）</p>
+<p>✅ 個人倉儲：有「新的 commit」</p>
+<p>✅ Classroom 團體倉儲：還停在舊狀態</p>
+<p>❌ 目前 兩邊沒有自動同步</p>
+<p>👉 Git 不會自動同步兩個 repo<br/>👉 你必須「選一個作為主來源」</p>
+<p>✅ 最推薦、最安全的做法（助教／老師也認可）<br/>⭐ 原則（請一定照這個）</p>
+<p>之後「只用團體倉儲開發」<br/>個人倉儲只當「舊來源」，把更新補進來一次即可</p>
+<p>🟢 做法 A（推薦）：把「個人倉儲的更新」合併到團體倉儲<br/>🎯 適合你現在的情況</p>
+<p>個人倉儲有新 commit</p>
+<p>團體倉儲是交作業用（最終版）</p>
+<p>🧭 實際操作（一步一步）<br/>① 進入 團體倉儲資料夾<br/>cd Y:\1a-ag2</p>
+<p>② 加入「個人倉儲」作為另一個 remote<br/>git remote add personal https://github.com/LanChienEn/w11.git</p>
+<p><br/>確認一下：</p>
+<p>git remote -v</p>
+<p><br/>你會看到：</p>
+<p>origin → Classroom</p>
+<p>personal → 個人倉儲</p>
+<p>③ 抓取個人倉儲的更新（不會改你本地檔案）<br/>git fetch personal</p>
+<p>④ 把個人倉儲的 main（或 master）合併進來</p>
+<p>⚠️ 請選你實際使用的分支（通常是 main）</p>
+<p>git merge personal/main</p>
+<p><br/>如果你是 master：</p>
+<p>git merge personal/master</p>
+<p>⑤ 推送到 Classroom 團體倉儲<br/>git push</p>
+<p><br/>🎉 完成同步</p>
+<p>🧠 合併後會發生什麼？</p>
+<p>✅ 個人倉儲的新 commit 完整保留</p>
+<p>✅ commit 作者、時間都正確</p>
+<p>✅ Classroom repo 出現「正常 merge 紀錄」</p>
+<p>✅ 老師看到的是「合理開發流程」</p>
+<p>⚠️ 如果出現衝突（conflict）</p>
+<p>Git 會提示哪些檔案衝突：</p>
+<p>git status</p>
+<p><br/>你只要：</p>
+<p>打開衝突檔案</p>
+<p>保留你要的版本</p>
+<p>存檔後：</p>
+<p>git add .<br/>git commit<br/>git push</p>
+<p><br/>（如果你要，我可以教你「怎麼看衝突標記」）</p>
+<p>🚫 不推薦的做法（但說給你知道）<br/>❌ 再次用 git push --mirror</p>
+<p>會 覆蓋 Classroom</p>
+<p>可能影響同組同學</p>
+<p>老師會覺得歷史怪怪的</p>
+<p>👉 現在不要再用 mirror</p>
+<p>🟡 什麼時候才可以再 mirror？</p>
+<p>只有一個人</p>
+<p>團體 repo 完全沒人動</p>
+<p>老師允許覆蓋</p>
+<p>否則 ❌</p>
+<p>🏁 以後的正確習慣（很重要）</p>
+<p>從現在開始：</p>
+<p>🟢 只在 1a-ag2 寫程式</p>
+<p>🟢 push 的對象只有 Classroom</p>
+<p>❌ 不要再從個人 repo 開發</p>
+<p>如果你想保留個人 repo：</p>
+<p>git push personal main</p>
+<p><br/>（反方向同步，用來備份）</p>
+<p>✅ 一句話總結（你可以記這句）</p>
+<p>把「個人 repo」當來源，用 fetch + merge 合併到「Classroom repo」一次，之後只用 Classroom。</p>
+<br />一般作法 << <a href='一般作法.html'>Previous</a> <a href='後來大家都要編輯需要中止同步.html'>Next</a> >> 後來大家都要編輯需要中止同步</div>
         
     <!-- footer -->
       <div class="container">

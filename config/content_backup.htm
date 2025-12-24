@@ -1,8 +1,8 @@
-<h1>First</h1>
+<h1>首頁</h1>
 <pre aria-label="譯文：login" class="tw-data-text tw-text-large tw-ta" data-placeholder="翻譯" data-ved="2ahUKEwjE2dnJjcKRAxXg1DQHHUbaE4wQ3ewLegQIDhAW" id="tw-target-text" role="text" tabindex="-1"><span class="Y2IQFc" lang="en">Login</span>密碼:admin</pre>
 <p>可攜程式:<a href="http://229.cycu.org/portable_2026.7z">portable_2026.7z</a> </p>
-<p>組長:籃健恩 41423154 個人倉儲:<a href="https://github.com/LanChienEn/w11">https://github.com/LanChienEn/w11</a></p>
-<p>組員:黃育驊 41136123 個人倉儲:<a href="https://github.com/qwe43157/41136123">https://github.com/qwe43157/41136123</a><a href="https://github.com/qwe43157/41136123"></a></p>
+<p>組長:籃健恩  <a href="https://github.com/LanChienEn/w11">https://github.com/LanChienEn/w11</a></p>
+<p>組員:黃育驊 <a class="Link--inTextBlock" href="https://qwe43157.github.io/41136123/">https://qwe43157.github.io/41136123/</a></p>
 <p style="padding-left: 60px;"></p>
 <p></p>
 <h1>Brython指令區</h1>
@@ -648,15 +648,338 @@ pyodide.runPython(code);
 </pre>
 <p><a href="https://mde.tw/cp2025/content/Pyodide.html?src=https://gist.githubusercontent.com/mdecycu/ec4bb35dd0769e7a83d2a9fa57878a67/raw/3ed6869dcd7312254513ca507de17945e15a9b6f/box_max_volume_short.py">Volume_max_pyodide_de_short.py</a></p>
 <p><a href="https://mde.tw/cp2025/content/Pyodide.html?src=https://gist.githubusercontent.com/mdecycu/ec4bb35dd0769e7a83d2a9fa57878a67/raw/3ed6869dcd7312254513ca507de17945e15a9b6f/box_volume_max_pyodide_de.py">Volume_max_pyodide_de.py</a></p>
-<p></p>
-<p></p>
-<h1>學習心得報告</h1>
-<h2><span>什麼是 git, GitHub, gist 與 cmsimde? 如何使用這些工具？為什麼要使用這些工具？ </span></h2>
-<p><span></span></p>
-<p><span></span></p>
-<p><span> </span></p>
+<h1><span>學習心得報告主題</span></h1>
+<h2><span>w3</span></h2>
+<p><strong>什麼是 git, GitHub, gist 與 cmsimde? 如何使用這些工具？為什麼要使用這些工具？</strong></p>
+<p><span>為何Git 與 Github?</span></p>
+<p>使用 Git 與 GitHub 主要有以下幾個原因：</p>
+<ol>
+<li>版本控制: Git 是一套分散式的版本控制系統，能記錄每一個檔案的修改歷程。這樣就算不小心改壞了某一個版本的程式，也能隨時回復到以前的版本，而且在協同設計流程中，可以追蹤那一個使用者改了那些內容、什麼時候改的，可以快速釐清許多議題。</li>
+<li>團隊協作: 多個開發者可以同時對同一個專案進行開發，透過分支（branch）機制，各自開發新功能、修 bug，最後再合併（merge）到主分支，避免互相覆蓋程式碼。</li>
+<li>雲端備份與分享: GitHub 是基於 Git 的雲端代管平台，可以將本地的 Git 專案上傳到雲端，不怕資料遺失。也方便將程式碼公開或私下分享給其他人。</li>
+<li>問題追蹤與管理: GitHub 除了儲存程式碼，還提供 issue、pull request 等工具，有助於追蹤 bug、討論功能、審查程式碼，提高專案管理效率。</li>
+<li>開放原始碼與社群合作: 許多開放原始碼專案都放在 GitHub，任何人都能貢獻程式碼，促進社群協作與學習。</li>
+<li>總結：使用 Git 和 GitHub 可以讓程式開發更有組織、更安全、更容易協作與管理，也方便與他人分享、學習與成長。</li>
+</ol>
+<p><span>請舉實際的計算機程式開發案例，說明如何操作 Git 與 Github，以便取得程式開發流程的便利與優勢。</span></p>
+<p>Git 與 GitHub 操作案例說明</p>
+<h4>Git 與 GitHub 實際操作案例：多人開發 ToDo List 網站</h4>
+<div>
+<h4>1. 專案初始化與上傳</h4>
+<div>
+<h4><strong>步驟:</strong></h4>
+<ol>
+<li>在本機建立專案資料夾，初始化 Git：
+<pre><code>git init</code></pre>
+</li>
+<li>新增檔案（如<span> </span><code>index.html</code>、<code>app.js</code>），並提交第一個版本：
+<pre><code>git add .<br/>git commit -m "Initial commit"</code></pre>
+</li>
+<li>在 GitHub 建立新 repository，然後將本機專案推送到遠端：
+<pre><code>git remote add origin https://github.com/username/todo-app.git<br/>git push -u origin master</code></pre>
+</li>
+</ol>
+<p><strong>優勢:</strong>所有程式碼都有歷史紀錄，且安全備份於雲端。</p>
+</div>
+</div>
+<div>
+<h4>2. 分支開發新功能</h4>
+<div>
+<p><strong>情境:</strong>小明負責開發「新增待辦事項」功能。</p>
+<p><strong>步驟:</strong></p>
+<ol>
+<li>建立新分支：
+<pre><code>git checkout -b feature/add-todo-item</code></pre>
+</li>
+<li>實作功能並提交：
+<pre><code>git add .<br/>git commit -m "Add feature to create todo item"</code></pre>
+</li>
+<li>推送分支到 GitHub：
+<pre><code>git push origin feature/add-todo-item</code></pre>
+</li>
+</ol>
+<p><strong>優勢:</strong>各自分支開發，互不干擾，降低衝突風險。</p>
+</div>
+</div>
+<div>
+<h4>3. Pull Request（合併請求）與 Code Review</h4>
+<div class="step">
+<p><strong>情境:</strong>小明開發完成，欲合併新功能到主分支。</p>
+<p><strong>步驟:</strong></p>
+<ol>
+<li>在 GitHub 上建立 Pull Request，描述功能內容。</li>
+<li>其他團隊成員審查程式碼，提出建議或修正。</li>
+<li>經討論無誤後，管理員合併 PR。</li>
+</ol>
+<p><strong>優勢:</strong>強化程式品質與團隊溝通，每次合併都有討論紀錄。</p>
+</div>
+</div>
+<div>
+<h4>4. 處理 Bug 與 Issue 追蹤</h4>
+<div class="step">
+<p><strong>情境:</strong>使用者發現「無法刪除待辦事項」的 bug。</p>
+<p><strong>步驟:</strong></p>
+<ol>
+<li>在 GitHub issue 區提出 bug 報告。</li>
+<li>團隊分配成員修正，建立<span> </span><code>fix/delete-todo-bug</code><span> </span>分支。</li>
+<li>修正後提交、發 PR、review、合併。</li>
+</ol>
+<p><strong>優勢:</strong>所有 bug、功能需求有明確記錄，修正過程透明。</p>
+</div>
+</div>
+<div>
+<h4>5. 版本回溯與復原</h4>
+<div class="step">
+<p><strong>情境:</strong>新功能導致主分支出錯。</p>
+<p><strong>步驟:</strong></p>
+<ol>
+<li>透過 Git log 查找歷史版本：
+<pre><code>git log</code></pre>
+</li>
+<li>回復到上一個穩定版本：
+<pre><code>git checkout &lt;commit-id&gt;</code></pre>
+</li>
+</ol>
+<p><strong>優勢:</strong>不怕程式「改壞」，可隨時回復，輕鬆追蹤誰做了什麼修改。</p>
+</div>
+</div>
+<div>
+<h4>總結:</h4>
+<p>Git 與 GitHub 提供完整的版本控制、團隊協作、問題追蹤、程式碼審查與備份機制，讓開發流程更有條理，大幅提升開發效率與品質。不論團隊或個人開發，都能享有回溯、備份、管理等多重好處。</p>
+</div>
+<h2><strong><span>w7</span></strong></h2>
+<p><strong>Brython 是什麼？如何在瀏覽器配置 Brython 環境？ Brython 能做什麼？</strong></p>
+<p><span style="background-color: #ccffff;"><strong>一、Brython 是什麼？</strong></span></p>
+<p>Brython = Browser Python（瀏覽器中的 Python）</p>
+<p>👉 它是一個 JavaScript 函式庫，讓你可以：</p>
+<p>在 瀏覽器裡直接寫 Python</p>
+<p>用 Python 操作 HTML / CSS / DOM</p>
+<p>不用後端、不用安裝 Python</p>
+<p>開啟網頁就能跑</p>
+<p>📌 本質：</p>
+<p>Python 語法</p>
+<p>在瀏覽器中 轉成 JavaScript 執行</p>
+<p>為什麼會有 Brython？</p>
+<p>因為：</p>
+<p>瀏覽器只懂 JavaScript</p>
+<p>但很多人更熟 Python</p>
+<p>Brython 幫你把 Python「翻譯」成瀏覽器能跑的程式</p>
+<p>Brython 跟其他東西的比較<br/>技術 在哪跑 用途<br/>Python 電腦 / 伺服器 後端、資料分析<br/>JavaScript 瀏覽器 網頁互動<br/>Brython 瀏覽器 用 Python 寫前端<br/>Flask / Django 伺服器 網站後端</p>
+<p>📌 Brython 是前端，不是後端</p>
+<p><span style="background-color: #ccffff;"><strong>如何在瀏覽器配置 Brython 環境</strong></span><br/>✅ 最簡單（只要一個 HTML）<br/>&lt;!DOCTYPE html&gt;<br/>&lt;html&gt;<br/>&lt;head&gt;<br/> &lt;meta charset="utf-8"&gt;<br/> &lt;title&gt;Brython Demo&lt;/title&gt;</p>
+<p>&lt;!-- 載入 Brython --&gt;<br/> &lt;script src="https://cdn.jsdelivr.net/npm/brython@3.11.3/brython.min.js"&gt;&lt;/script&gt;<br/>&lt;/head&gt;</p>
+<p>&lt;body onload="brython()"&gt;</p>
+<p>&lt;h1 id="title"&gt;Hello&lt;/h1&gt;</p>
+<p>&lt;script type="text/python"&gt;<br/>from browser import document</p>
+<p>document["title"].text = "Hello Brython!"<br/>&lt;/script&gt;</p>
+<p>&lt;/body&gt;<br/>&lt;/html&gt;</p>
+<p><br/>📌 重點只有 4 個：</p>
+<p>1️⃣ 載入 brython.min.js<br/>2️⃣ &lt;body onload="brython()"&gt;<br/>3️⃣ &lt;script type="text/python"&gt;<br/>4️⃣ from browser import document</p>
+<p>打開這個 HTML，不用伺服器，直接能跑</p>
+<p>✅ 進階：外部 Python 檔案<br/>&lt;script type="text/python" src="main.py"&gt;&lt;/script&gt;</p>
+<p># main.py<br/>from browser import document</p>
+<p>document &lt;= "Brython is cool!"</p>
+<p><br/>📌 非常適合：</p>
+<p>遊戲</p>
+<p>專案結構化</p>
+<p>GitHub Pages</p>
+<p><span style="background-color: #ccffff;"><strong>Brython 能做什麼？</strong></span><br/>1️⃣ 操作網頁（DOM）<br/>from browser import document</p>
+<p>document["btn"].bind("click", lambda e: alert("Clicked!"))</p>
+<p><br/>你可以：</p>
+<p>改文字</p>
+<p>改顏色</p>
+<p>處理按鈕事件</p>
+<p>2️⃣ 取代 JavaScript（用 Python 寫前端）<br/>JavaScript Brython<br/>document.getElementById() document["id"]<br/>addEventListener bind()<br/>innerHTML .html</p>
+<p>📌 非常適合「會 Python、不想寫 JS」的人</p>
+<p>3️⃣ 做遊戲（你最近在做的）</p>
+<p>Brython 很適合：</p>
+<p>🎯 Aim Lab 類型遊戲</p>
+<p>🟦 點擊反應遊戲</p>
+<p>🕹 Canvas 遊戲</p>
+<p>🧪 教學用互動模擬</p>
+<p>你已經用到的功能包括：</p>
+<p>計時器</p>
+<p>滑鼠事件</p>
+<p>隨機生成目標</p>
+<p>計分系統</p>
+<p>4️⃣ 教學與作業展示（GitHub Pages）</p>
+<p>📌 很多老師喜歡 Brython，因為：</p>
+<p>不用安裝環境</p>
+<p>一個 HTML 就能交</p>
+<p>GitHub Pages 直接展示</p>
+<p>適合「程式 + 說明」</p>
+<p>5️⃣ 學習前端邏輯（不被 JS 卡住）</p>
+<p>Brython 讓你專注在：</p>
+<p>事件</p>
+<p>狀態</p>
+<p>邏輯</p>
+<p>遊戲設計</p>
+<p>而不是 JS 語法細節</p>
+<p>Brython 的限制</p>
+<p>⚠️ Brython 不是萬能</p>
+<p>❌ 不適合</p>
+<p>後端伺服器</p>
+<p>資料庫</p>
+<p>高效能大型遊戲</p>
+<p>AI / ML 運算</p>
+<p>⚠️ 注意</p>
+<p>效能 &lt; 原生 JavaScript</p>
+<p>部分 Python 套件不能用</p>
+<p>依賴 CDN（離線需額外設定）</p>
+<p>什麼情況「非常適合」用 Brython？</p>
+<p>✅ 你是 Python 使用者<br/>✅ 想做 網頁互動 / 小遊戲<br/>✅ 要交作業、展示成果<br/>✅ 用 GitHub Pages<br/>✅ 教學、Demo、Prototype</p>
+<p>➡️ Brython = 最佳選擇</p>
+<p><span style="background-color: #ccffff;"><strong>總結:</strong></span></p>
+<p>Brython 就是：用 Python 在瀏覽器寫前端程式</p>
+<h1>w11</h1>
+<h2>如何建立團體github網站</h2>
+<h3>一般作法</h3>
+<p>首先在github下載以教授給的cp demo做範本。進入Codespaces裡輸入程式、載入phython套件，然後在網路上開終端機進入編輯範例網站畫面。</p>
+<h3>我的作法</h3>
+<p>1.最初:<span style="background-color: #ffcc99;">鏡射</span>自己的<span style="background-color: #ffcc99;">個人倉儲網站</span>的個人網站。</p>
+<p>2.一開始先<span style="background-color: #ffcc99;">同步</span>自己的個人倉儲<span style="background-color: #ffcc99;">到團體</span></p>
+<p>以下是詢問AI的過程:</p>
+<p><strong>我:</strong></p>
+<p>我現在有一個個人github倉儲，我該怎麼樣把我這一個倉儲完全複製(包括修改歷程)到另一個分組倉儲?</p>
+<p><strong>AI:</strong></p>
+<p>要完整複製一個 GitHub 倉儲（包含所有 commit / branch / tag 的歷史）到另一個分組倉儲，最正確、乾淨、不會漏歷史的方法是用 mirror（鏡像）推送。</p>
+<p>下面我分成「✅推薦做法」與「⚠️常見錯誤」來說。</p>
+<p>✅ 推薦做法：git clone --mirror（完整保留歷史）<br/>🎯 適用情境</p>
+<p>你有 個人 repo想把它 100% 原封不動複製到 分組 repo</p>
+<p>包含：所有 commit</p>
+<p>所有 branch</p>
+<p>所有 tag</p>
+<p>所有歷史</p>
+<p>Step 1️⃣ 複製「個人倉儲」為鏡像<br/>git clone --mirror https://github.com/你的帳號/個人倉儲.git</p>
+<p><br/>這會產生一個資料夾，例如：</p>
+<p>個人倉儲.git/</p>
+<p><br/>⚠️ 注意：這不是一般的 clone，不要進去改檔案</p>
+<p>Step 2️⃣ 進入鏡像倉儲資料夾<br/>cd 個人倉儲.git</p>
+<p>Step 3️⃣ 設定新的 remote（分組倉儲）<br/>git remote set-url --push origin https://github.com/分組帳號/分組倉儲.git</p>
+<p><br/>（你可以用 git remote -v 確認）</p>
+<p>Step 4️⃣ 推送「所有歷史」到分組倉儲<br/>git push --mirror</p>
+<p><br/>🎉 完成！</p>
+<p>分組倉儲現在會有：</p>
+<p>完整 commit 紀錄</p>
+<p>所有分支</p>
+<p>所有 tag<br/>→ 跟你個人倉儲一模一樣</p>
+<p>🧪 確認是否成功（可選）</p>
+<p>到 GitHub 分組倉儲頁面確認：</p>
+<p>Commit 歷史有沒有完整</p>
+<p>分支是否齊全</p>
+<p>⚠️ 常見錯誤（不推薦）<br/>❌ 只做這樣：<br/>git remote add origin ...<br/>git push</p>
+<p><br/>👉 只會推目前 branch<br/>👉 歷史可能不完整<br/>👉 tag / 其他 branch 會消失</p>
+<p>🧠 如果你「之後要繼續在分組 repo 開發」<br/>做完 mirror 後，重新正常 clone 一次分組 repo：<br/>git clone https://github.com/分組帳號/分組倉儲.git</p>
+<p><br/>然後之後都用這個 repo 開發即可。</p>
+<p>🆘 特殊情況提醒<br/>情況 解法<br/>分組 repo 已經有內容 需要先刪 repo 或確定你要覆蓋<br/>沒有 push 權限 要請組長把你加成 collaborator<br/><br/></p>
+<p><strong>我:</strong></p>
+<p>我有在自己個人倉儲上傳新的內容，但沒有跟團體倉儲同步上傳新的內容。我該怎麼一起同步到團體倉儲裡?讓我個人的倉儲更新的內容可以跟團體倉儲同步。</p>
+<p><strong>AI:</strong></p>
+<p>這個問題問得非常好，而且很常見 👍<br/>現在你的狀況是「兩個倉儲已經分家」，我幫你用最安全、不會被老師誤會的方式處理。</p>
+<p>🎯 你現在的狀態（重點釐清）</p>
+<p>✅ 個人倉儲：有「新的 commit」</p>
+<p>✅ Classroom 團體倉儲：還停在舊狀態</p>
+<p>❌ 目前 兩邊沒有自動同步</p>
+<p>👉 Git 不會自動同步兩個 repo<br/>👉 你必須「選一個作為主來源」</p>
+<p>✅ 最推薦、最安全的做法（助教／老師也認可）<br/>⭐ 原則（請一定照這個）</p>
+<p>之後「只用團體倉儲開發」<br/>個人倉儲只當「舊來源」，把更新補進來一次即可</p>
+<p>🟢 做法 A（推薦）：把「個人倉儲的更新」合併到團體倉儲<br/>🎯 適合你現在的情況</p>
+<p>個人倉儲有新 commit</p>
+<p>團體倉儲是交作業用（最終版）</p>
+<p>🧭 實際操作（一步一步）<br/>① 進入 團體倉儲資料夾<br/>cd Y:\1a-ag2</p>
+<p>② 加入「個人倉儲」作為另一個 remote<br/>git remote add personal https://github.com/LanChienEn/w11.git</p>
+<p><br/>確認一下：</p>
+<p>git remote -v</p>
+<p><br/>你會看到：</p>
+<p>origin → Classroom</p>
+<p>personal → 個人倉儲</p>
+<p>③ 抓取個人倉儲的更新（不會改你本地檔案）<br/>git fetch personal</p>
+<p>④ 把個人倉儲的 main（或 master）合併進來</p>
+<p>⚠️ 請選你實際使用的分支（通常是 main）</p>
+<p>git merge personal/main</p>
+<p><br/>如果你是 master：</p>
+<p>git merge personal/master</p>
+<p>⑤ 推送到 Classroom 團體倉儲<br/>git push</p>
+<p><br/>🎉 完成同步</p>
+<p>🧠 合併後會發生什麼？</p>
+<p>✅ 個人倉儲的新 commit 完整保留</p>
+<p>✅ commit 作者、時間都正確</p>
+<p>✅ Classroom repo 出現「正常 merge 紀錄」</p>
+<p>✅ 老師看到的是「合理開發流程」</p>
+<p>⚠️ 如果出現衝突（conflict）</p>
+<p>Git 會提示哪些檔案衝突：</p>
+<p>git status</p>
+<p><br/>你只要：</p>
+<p>打開衝突檔案</p>
+<p>保留你要的版本</p>
+<p>存檔後：</p>
+<p>git add .<br/>git commit<br/>git push</p>
+<p><br/>（如果你要，我可以教你「怎麼看衝突標記」）</p>
+<p>🚫 不推薦的做法（但說給你知道）<br/>❌ 再次用 git push --mirror</p>
+<p>會 覆蓋 Classroom</p>
+<p>可能影響同組同學</p>
+<p>老師會覺得歷史怪怪的</p>
+<p>👉 現在不要再用 mirror</p>
+<p>🟡 什麼時候才可以再 mirror？</p>
+<p>只有一個人</p>
+<p>團體 repo 完全沒人動</p>
+<p>老師允許覆蓋</p>
+<p>否則 ❌</p>
+<p>🏁 以後的正確習慣（很重要）</p>
+<p>從現在開始：</p>
+<p>🟢 只在 1a-ag2 寫程式</p>
+<p>🟢 push 的對象只有 Classroom</p>
+<p>❌ 不要再從個人 repo 開發</p>
+<p>如果你想保留個人 repo：</p>
+<p>git push personal main</p>
+<p><br/>（反方向同步，用來備份）</p>
+<p>✅ 一句話總結（你可以記這句）</p>
+<p>把「個人 repo」當來源，用 fetch + merge 合併到「Classroom repo」一次，之後只用 Classroom。</p>
+<h3><strong>後來大家都要編輯需要中止同步</strong></h3>
+<p><strong>我:</strong></p>
+<p>我現在想要把我倉儲的跟我個人的倉儲都獨立成個體(取消我個人網站是主要，分組網站是備份)該怎麼做?</p>
+<p><strong>AI:</strong></p>
+<p>我們現在要做的是把：</p>
+<p>❌「一個 repo 推兩個 remote（主＋備）」<br/>改成<br/>✅「兩個完全獨立、互不影響的倉儲」</p>
+<p>我會給你 安全、可逆、一步一步 的做法。</p>
+<p>🎯 你的目標（確認）<br/>最終你要的是：</p>
+<p>倉儲 狀態<br/>個人倉儲 LanChienEn/w11 獨立開發<br/>Classroom 倉儲 mdecp2025/1a-ag2 獨立開發<br/>❌ 不再互相 push 完全切斷<br/>✅ 正確作法（「切斷關係」只做一次）<br/>🔹 Step 1：確認你現在在哪個資料夾（很重要）<br/>你現在應該在：</p>
+<p><br/>Y:\w11<br/>確認：</p>
+<p><br/>cd Y:\w11 git remote -v<br/>你會看到類似：</p>
+<p><br/>origin https://github.com/LanChienEn/w11.git backup https://github.com/mdecp2025/1a-ag2.git<br/>🔹 Step 2：移除 Classroom 的 remote（關鍵）<br/>在 Y:\w11 執行：</p>
+<p><br/>git remote remove backup<br/>確認：</p>
+<p><br/>git remote -v<br/>只剩：</p>
+<p><br/>origin https://github.com/LanChienEn/w11.git<br/>👉 到這裡：w11 本地專案已「只屬於個人倉儲」</p>
+<p>🔹 Step 3：讓 Classroom 倉儲也成為「自己的獨立個體」<br/>⚠️ 重要觀念<br/>Y:\1a-ag2 這個資料夾 已經是一個獨立 clone<br/>我們只要確保它：</p>
+<p>沒有連到你的個人倉儲</p>
+<p>只 push Classroom 自己</p>
+<p>進入它：</p>
+<p><br/>cd Y:\1a-ag2 git remote -v<br/>你應該只看到：</p>
+<p><br/>origin https://github.com/mdecp2025/1a-ag2.git<br/>❗ 如果你看到 personal / backup<br/>移除它們：</p>
+<p><br/>git remote remove personal git remote remove backup<br/>再確認：</p>
+<p><br/>git remote -v<br/>🎉 完成後的狀態（非常重要）</p>
+<p>📁 Y:\w11</p>
+<p><br/>origin → 個人 GitHub</p>
+<p>📁 Y:\1a-ag2</p>
+<p><br/>origin → Classroom GitHub<br/>👉 兩個 repo 再也不會互相影響</p>
+<p>🧠 之後你要怎麼用？（使用規則）<br/>🧑‍💻 開發個人網站</p>
+<p>cd Y:\w11 git add . git commit -m "個人網站更新" git push origin main<br/>👥 開發分組/Classroom 網站</p>
+<p>cd Y:\1a-ag2 git add . git commit -m "分組網站更新" git push origin main<br/>❌ 不再有 push 兩次<br/>❌ 不再有主/備概念</p>
+<p>🔥 常見錯誤（避免）<br/>錯誤 後果<br/>在 w11 push Classroom 再次混在一起<br/>用 --force Classroom 歷史會壞<br/>兩個 repo 混著改 容易誤 push<br/>🧪 快速檢查清單（考前 10 秒）<br/>在任何資料夾只做這件事：</p>
+<p><br/>git remote -v<br/>看到 一個 origin</p>
+<p>URL 正確</p>
+<p>就是「獨立乾淨狀態」✔️</p>
+<p><strong></strong></p>
+<h3><strong>以後只要小組成員要編輯</strong></h3>
+<p><strong>1.就在團體倉儲<span style="background-color: #ffff99;">開 Codespaces 進到 fluffy sniffle</span> 這個專案裡。</strong></p>
+<p><strong>2.在 <span style="background-color: #ffff99;">init_replit 裡輸入pip install flask flask_cors bs4 lxml pelican markdown gevent</span></strong></p>
+<p><strong>3.執行後<span style="background-color: #ffff99;">再輸入 python main.py&amp;</span> </strong></p>
+<p><strong>4.在<span style="background-color: #ffff99;">終端機</span>的地方就會出現本網頁的網址</strong></p>
+<p><strong>5.編輯的頁面輸入首頁第一行密碼即可進入編輯畫面</strong></p>
 <h1>w12</h1>
-<h2>國旗旋轉</h2>
+<h2><span style="background-color: #ffff00;">國旗旋轉</span></h2>
+<p><em><strong>(複製到首頁下Brython指令區)</strong></em></p>
+<p><em><strong>________________________________________________________________________</strong></em></p>
 <p># 畫中華民國國旗，並展示 90 度與 45 度順時針旋轉<br/># 導入 doc<br/>from browser import document as doc<br/># 以下將利用 html 產生所需的繪圖畫布<br/>from browser import html<br/># 利用 math 函式庫執行三角函數運算<br/>import math</p>
 <p># --- 畫布與環境設定 ---</p>
 <p># 定義畫布尺寸<br/>FLAG_W = 600<br/>FLAG_H = 400<br/># 旋轉中心點<br/>CENTER_X = FLAG_W / 2<br/>CENTER_Y = FLAG_H / 2</p>
@@ -674,8 +997,9 @@ pyodide.runPython(code);
 <p># --- 繪製函數：順時針旋轉 90 度 ---<br/>def draw_90_degree_flag():<br/> ctx = doc["flag_90"].getContext("2d")<br/> <br/> # 1. 儲存當前狀態<br/> ctx.save()<br/> <br/> # 2. 平移原點到畫布中心 (600/2, 400/2) = (300, 200)<br/> ctx.translate(CENTER_X, CENTER_Y)<br/> <br/> # 3. 旋轉 90 度 (π/2) 順時針<br/> ctx.rotate(math.pi / 2)<br/> <br/> # 4. 將原點平移回去，以便國旗內容以 (0, 0) 為起點繪製<br/> ctx.translate(-CENTER_X, -CENTER_Y)<br/> <br/> # 5. 繪製國旗內容<br/> draw_flag_content(ctx)<br/> <br/> # 6. 恢復狀態<br/> ctx.restore()</p>
 <p># --- 繪製函數：順時針旋轉 45 度 ---<br/>def draw_45_degree_flag():<br/> ctx = doc["flag_45"].getContext("2d")<br/> <br/> # 1. 儲存當前狀態<br/> ctx.save()<br/> <br/> # 2. 平移原點到畫布中心<br/> ctx.translate(CENTER_X, CENTER_Y)<br/> <br/> # 3. 旋轉 45 度 (π/4) 順時針<br/> ctx.rotate(math.pi / 4)<br/> <br/> # 4. 將原點平移回去<br/> ctx.translate(-CENTER_X, -CENTER_Y)<br/> <br/> # 5. 繪製國旗內容<br/> draw_flag_content(ctx)<br/> <br/> # 6. 恢復狀態<br/> ctx.restore()</p>
 <p># --- 執行繪圖 ---<br/>draw_original_flag()<br/>draw_90_degree_flag()<br/>draw_45_degree_flag()</p>
-<h2>機器人七段程式碼</h2>
-<p></p>
+<h2><span style="background-color: #ffff00;">機器人七段程式碼</span></h2>
+<p><em><strong>(複製到首頁下Brython指令區)</strong></em></p>
+<p><em><strong>________________________________________________________________________</strong></em></p>
 <p>#請修正以下程式讓機器人可以走出七段顯示器格式的數字<br/>from robot_lib import World as BaseWorld, AnimatedRobot as BaseRobot, timer, CELL_SIZE</p>
 <p># --- 1. 定義世界（加入細格） ---<br/>class MyWorld(BaseWorld):<br/> def __init__(self, width=10, height=10, sub_cell=5):<br/> super().__init__(width, height)<br/> self.sub_cell = sub_cell<br/> self.sub_size = CELL_SIZE // sub_cell<br/> self._draw_fine_grid()</p>
 <p>def _draw_fine_grid(self):<br/> ctx = self.layers["grid"].getContext("2d")<br/> ctx.strokeStyle = "#e0e0e0"<br/> ctx.lineWidth = 0.5<br/> # 畫垂直細線<br/> for i in range(self.width * self.sub_cell + 1):<br/> x = i * self.sub_size<br/> ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, self.height * CELL_SIZE); ctx.stroke()<br/> # 畫水平細線<br/> for j in range(self.height * self.sub_cell + 1):<br/> y = j * self.sub_size<br/> ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(self.width * CELL_SIZE, y); ctx.stroke()</p>
@@ -696,7 +1020,7 @@ pyodide.runPython(code);
 <p># Y 軸偏移量 oy：<br/>START_Y_SUB_CELL = 1</p>
 <p>for i in range(10):<br/> # 每個數字的起始 X 細格座標 (每個數字寬度 4，間隔 2，共 6 寬度)<br/> start_x_offset = 1 + i * 6 <br/> draw_digit(robot, i, start_x_offset, START_Y_SUB_CELL)</p>
 <p>print("機器人正在寫字：0123456789 (已修正座標反轉問題)")</p>
-<p></p>
+<p><em><strong>________________________________________________________________________</strong></em></p>
 <h1>期末報告1(w14三個操作)</h1>
 <h2>操作一、操作二</h2>
 <p><span data-teams="true">影片:<a href="https://youtu.be/HyKCpGbWiek">https://youtu.be/HyKCpGbWiek</a></span></p>
@@ -707,11 +1031,11 @@ pyodide.runPython(code);
 <h1>期末報告2(程式新功能)</h1>
 <h2>第二個程式的改良</h2>
 <p><span data-teams="true">以下是第二個程式的原始碼分析:</span></p>
-<p><strong>一、整體架構總覽</strong></p>
+<p><span style="background-color: #ccffff;"><strong>一、整體架構總覽</strong></span></p>
 <p>這是一個：Flask 網頁 + Brython 寫的點擊小遊戲 + Ajax 上傳分數</p>
 <p>📌 技術角色分工：</p>
 <p>技術 用途<br/>Flask 後端伺服器、分數儲存<br/>Jinja2 HTML 模板引擎<br/>Brython 在瀏覽器執行 Python<br/>JavaScript (Ajax) 非同步送分數<br/>HTML / CSS 遊戲畫面</p>
-<p><br/><strong>二、Jinja2 模板結構說明</strong></p>
+<p><br/><span style="background-color: #ccffff;"><strong>二、Jinja2 模板結構說明</strong></span></p>
 <p>{% extends "base.html" %}</p>
 <p>🔹 繼承 base.html</p>
 <p>使用 Flask 常見的 模板繼承</p>
@@ -722,46 +1046,52 @@ pyodide.runPython(code);
 <p>共用 CSS<br/>{% block title %}Brython 遊戲{% endblock %}<br/>🔹 設定頁面標題<br/>對應 base.html 裡的 {% block title %}</p>
 <p>瀏覽器標題顯示「Brython 遊戲」</p>
 <p><br/>{% block content %} ... {% endblock %}<br/>🔹 主內容區<br/>整個遊戲畫面都在這個區塊內</p>
-<p><strong>三、載入 Brython</strong></p>
+<p></p>
+<p><span style="background-color: #ccffff;"><strong>三、載入 Brython</strong></span></p>
 <p>&lt;script src="https://cdn.jsdelivr.net/npm/brython@3.11.3/brython.min.js"&gt;&lt;/script&gt; &lt;script src="https://cdn.jsdelivr.net/npm/brython@3.11.3/brython_stdlib.js"&gt;&lt;/script&gt;<br/>🔹 這兩個做什麼？<br/>檔案 功能<br/>brython.min.js Brython 核心<br/>brython_stdlib.js Python 標準函式庫<br/>📌 沒有它們，瀏覽器看不懂 &lt;script type="text/python"&gt;</p>
 <p><br/>&lt;body onload="brython(1)"&gt;<br/>🔹 啟動 Brython<br/>網頁載入完成 → 啟動 Brython</p>
 <p>1 代表「debug 模式」</p>
-<p><strong>四、遊戲畫面 HTML</strong></p>
+<p></p>
+<p><span style="background-color: #ccffff;"><strong>四、遊戲畫面 HTML</strong></span></p>
 <p>&lt;h2 style="text-align: center;"&gt;🕹️ 點擊測試：點擊移動中的圓形！&lt;/h2&gt;<br/>➡️ 遊戲標題</p>
 <p><br/>&lt;div id="brython_div1" style="width: 600px; height: 400px; margin: 20px auto;"&gt;&lt;/div&gt;<br/>🔹 遊戲場地<br/>寬：600px</p>
 <p>高：400px</p>
 <p>所有遊戲元素都動態加到這裡</p>
-<p><strong>五、為什麼要用 {% raw %}？</strong></p>
+<p></p>
+<p><span style="background-color: #ccffff;"><strong>五、為什麼要用 {% raw %}？</strong></span></p>
 <p>{% raw %} &lt;script type="text/python"&gt;<br/>🔹 解決的問題<br/>Brython 裡有：</p>
 <p>f"{score}"</p>
 <p>{}</p>
 <p>⚠️ Jinja2 會誤以為是模板語法</p>
-<p>➡️ {% raw %} 告訴 Jinja2：</p>
-<p>「這一段我不解析，原封不動交給瀏覽器」</p>
-<p><strong>六、Brython：匯入模組</strong></p>
+<p>➡️ {% raw %} 告訴 Jinja2：「這一段我不解析，原封不動交給瀏覽器」</p>
+<p></p>
+<p><span style="background-color: #ccffff;"><strong>六、Brython：匯入模組</strong></span></p>
 <p>from browser import document, timer, window, ajax import random import time<br/>🔹 每個模組用途<br/>模組 功能<br/>document 操作 DOM<br/>timer setTimeout / setInterval<br/>window JS 的 window<br/>ajax Ajax 請求<br/>random 隨機位置、顏色<br/>time 計時</p>
-<p><br/><strong>七、遊戲全域設定</strong></p>
+<p><br/><span style="background-color: #ccffff;"><strong>七、遊戲全域設定</strong></span></p>
 <p>GAME_DURATION = 30 score = 0 game_active = False<br/>變數 說明<br/>GAME_DURATION 遊戲時間（秒）<br/>score 玩家分數<br/>game_active 是否進行中</p>
-<p><br/><strong>八、初始化遊戲區（DOM 操作）</strong></p>
+<p><br/><span style="background-color: #ccffff;"><strong>八、初始化遊戲區（DOM 操作）</strong></span></p>
 <p>game_area = document["brython_div1"]<br/>➡️ 抓取 &lt;div id="brython_div1"&gt;</p>
 <p><br/>game_area.style.border = "3px solid #333" game_area.style.backgroundColor = "#e0e0ff" game_area.style.position = "relative"</p>
 <p>🔹 為什麼要 position: relative？</p>
 <p>👉 讓裡面的圓形可以用 absolute 定位</p>
-<p><strong>九、分數與時間顯示區</strong></p>
+<p></p>
+<p><span style="background-color: #ccffff;"><strong>九、分數與時間顯示區</strong></span></p>
 <p>score_display = document.createElement("div") timer_display = document.createElement("div")<br/>左上角：分數</p>
 <p>右上角：倒數時間</p>
 <p>📌 這些都是 動態建立的 DOM 元素</p>
-<p><strong>十、目標圓形（遊戲核心）</strong></p>
+<p><span style="background-color: #ccffff;"><strong>十、目標圓形（遊戲核心）</strong></span></p>
 <p>target = document.createElement("div") target.style.width = "50px" target.style.height = "50px" target.style.borderRadius = "50%"<br/>➡️ 一個 50×50 的圓形</p>
 <p><br/>target.style.transition = "top 0.3s, left 0.3s"<br/>➡️ 平滑移動動畫</p>
-<p><strong>十一、移動圓形</strong></p>
+<p></p>
+<p><span style="background-color: #ccffff;"><strong>十一、移動圓形</strong></span></p>
 <p>def move_target():<br/>🔹 功能流程<br/>檢查遊戲是否進行中</p>
 <p>計算最大可移動範圍</p>
 <p>隨機產生新位置</p>
 <p>隨機顏色</p>
 <p>更新 top / left</p>
 <p>📌 min_y = 40<br/>→ 避免蓋住上方分數欄</p>
-<p><strong>十二、點擊事件</strong></p>
+<p></p>
+<p><span style="background-color: #ccffff;"><strong>十二、點擊事件</strong></span></p>
 <p>@target.bind("click") def hit_target(event):<br/>🔹 這裡很重要！<br/>只有點到圓形才會觸發</p>
 <p>不用額外計算距離</p>
 <p>流程：</p>
@@ -769,7 +1099,8 @@ pyodide.runPython(code);
 <p>更新顯示</p>
 <p>圓形立即移動</p>
 <p>stopPropagation() 防止事件冒泡</p>
-<p><strong>十三、Ajax 上傳分數（Brython → Flask）</strong></p>
+<p></p>
+<p><span style="background-color: #ccffff;"><strong>十三、Ajax 上傳分數（Brython → Flask）</strong></span></p>
 <p>req.open('POST', '{{ url_for("submit_score") }}', True)</p>
 <p>🔹 為什麼要 {% endraw %}？</p>
 <p>url_for() 必須由 Jinja2 處理</p>
@@ -777,7 +1108,7 @@ pyodide.runPython(code);
 <p>👉 這是 Flask + Brython 混用的標準寫法</p>
 <p><br/>json_payload = window.JSON.stringify({'score': final_score}) req.send(json_payload)<br/>➡️ 送出 JSON：</p>
 <p><br/>{ "score": 15 }</p>
-<p><br/><strong>十四、倒數計時與遊戲結束</strong></p>
+<p><br/><span style="background-color: #ccffff;"><strong>十四、倒數計時與遊戲結束</strong></span></p>
 <p>def check_time():<br/>每秒執行：</p>
 <p>計算剩餘時間</p>
 <p>時間到：</p>
@@ -785,93 +1116,118 @@ pyodide.runPython(code);
 <p>上傳分數</p>
 <p>顯示結束畫面</p>
 <p>清除移動計時器</p>
-<p><strong>十五、重新開始</strong></p>
+<p></p>
+<p><span style="background-color: #ccffff;"><strong>十五、重新開始</strong></span></p>
 <p>def restart_game(event):<br/>隱藏結束畫面</p>
 <p>重新初始化遊戲</p>
-<p><strong>十六、遊戲啟動流程</strong></p>
+<p></p>
+<p><span style="background-color: #ccffff;"><strong>十六、遊戲啟動流程</strong></span></p>
 <p>def start_game(): score = 0 game_active = True check_time() move_target() timer.set_interval(move_target, 800)<br/>📌 啟動時會：</p>
 <p>分數歸零</p>
 <p>啟動倒數</p>
 <p>每 0.8 秒移動一次圓形</p>
 <p><br/>start_game()<br/>➡️ 網頁一打開就開始遊戲 🎮</p>
 <h2>我所添加的程式新功能</h2>
-<p><strong>我把程式改成：</strong></p>
-<p><strong>手機可玩</strong> → 除了 click 也支援 touchstart 事件</p>
-<p><strong>圓點顏色固定</strong> → 移除隨機顏色，設定固定顏色（例如 #ff4500）</p>
-<p><br/>以下是我的程式碼:</p>
-<p># --- 遊戲核心邏輯 ---</p>
-<p>def move_target():<br/> """移動目標元素"""<br/> if not game_active:<br/> return<br/> <br/> max_x = game_area.clientWidth - 50<br/> max_y = game_area.clientHeight - 50<br/> min_y = 40</p>
-<p>new_x = random.randint(0, max(0, max_x))<br/> new_y = random.randint(min_y, max(min_y, max_y))<br/> <br/> # 🔹 固定顏色，移除隨機顏色<br/> target.style.backgroundColor = "#ff4500"<br/> <br/> target.style.left = f"{new_x}px"<br/> target.style.top = f"{new_y}px"</p>
-<p># 🔹 同時綁定 click 與 touchstart 事件，手機也可觸發<br/>def hit_target(event):<br/> """點擊或觸碰目標時觸發"""<br/> global score<br/> if not game_active:<br/> return</p>
-<p>score += 1<br/> score_display.text = f"分數: {score}"<br/> move_target()<br/> event.stopPropagation()</p>
-<p>target.bind("click", hit_target)<br/>target.bind("touchstart", hit_target) # 🔹 新增手機觸控支援</p>
-<p><br/><strong>修改重點說明：</strong></p>
-<p><span style="background-color: #ffff99;">1.固定顏色</span></p>
-<p><span style="background-color: #ffff99;">target.style.backgroundColor = "#ff4500"</span></p>
-<p><br/><span style="background-color: #ffff99;">2.不再隨機產生 RGB。</span></p>
-<p><span style="background-color: #ffff99;">手機支援</span></p>
-<p><span style="background-color: #ffff99;">target.bind("touchstart", hit_target)</span></p>
-<p><br/><span style="background-color: #ffff99;">手機瀏覽器不一定觸發 click，加入 touchstart 才能觸碰圓點得分。</span></p>
-<p><span style="background-color: #ffff99;">3.原有動畫仍保留</span></p>
-<p><span style="background-color: #ffff99;">圓形移動依舊平滑 (transition)</span></p>
-<p><br/><strong>我再次修改，把遊戲改成手機友善版，包含：</strong></p>
-<p><span style="background-color: #ffff99;">畫面自適應手機寬度（最大 600px，最小 320px）</span></p>
-<p><span style="background-color: #ffff99;">圓點固定顏色</span></p>
-<p><span style="background-color: #ffff99;">手機觸控支援</span></p>
-<p>下面是完整的修改範例（只修改 HTML 與 Brython 部分）：</p>
-<p>&lt;div id="brython_div1" style="width: 100%; max-width: 600px; min-width: 320px; height: 400px; margin: 20px auto;"&gt;&lt;/div&gt;</p>
-<p><br/>寬度用 100%，手機會自動縮放</p>
-<p>max-width: 600px → 桌機不會太大</p>
-<p>min-width: 320px → 手機螢幕最小寬度</p>
-<p># --- 遊戲核心邏輯 ---</p>
-<p>def move_target():<br/> """移動目標元素"""<br/> if not game_active:<br/> return<br/> <br/> max_x = game_area.clientWidth - 50<br/> max_y = game_area.clientHeight - 50<br/> min_y = 40</p>
-<p>new_x = random.randint(0, max(0, max_x))<br/> new_y = random.randint(min_y, max(min_y, max_y))<br/> <br/> # 🔹 固定顏色<br/> target.style.backgroundColor = "#ff4500"<br/> <br/> target.style.left = f"{new_x}px"<br/> target.style.top = f"{new_y}px"</p>
-<p># 🔹 同時綁定 click 與 touchstart，手機可玩<br/>def hit_target(event):<br/> global score<br/> if not game_active:<br/> return</p>
-<p>score += 1<br/> score_display.text = f"分數: {score}"<br/> move_target()<br/> event.stopPropagation()</p>
-<p>target.bind("click", hit_target)<br/>target.bind("touchstart", hit_target) # 🔹 手機觸控支援</p>
-<p>🔹 額外建議：畫面適應性</p>
-<p>若希望圓形大小也隨螢幕寬度自動縮放：</p>
-<p>target_size = min(50, game_area.clientWidth * 0.1)<br/>target.style.width = f"{target_size}px"<br/>target.style.height = f"{target_size}px"</p>
-<p><br/>手機螢幕小時，圓形會自動縮小到 10% 的畫面寬度</p>
-<p>桌機維持最大 50px</p>
-<p><br/><strong>修改後效果：</strong></p>
-<p><span style="background-color: #ffff99;">手機與平板都可以觸碰圓點得分</span></p>
-<p><span style="background-color: #ffff99;">圓點顏色固定，遊戲更穩定</span></p>
-<p><span style="background-color: #ffff99;">手機自適應寬度，遊戲畫面不會超出螢幕</span></p>
-<p><br/><strong>最後整合:</strong></p>
-<p>{% extends "base.html" %}</p>
-<p>{% block title %}Brython 遊戲{% endblock %}</p>
-<p>{% block content %}<br/> &lt;script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.11.3/brython.min.js"&gt;&lt;/script&gt;<br/> &lt;script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.11.3/brython_stdlib.js"&gt;&lt;/script&gt;<br/> <br/> &lt;body onload="brython(1)"&gt;</p>
-<p>&lt;h2 style="text-align: center;"&gt;🕹️ 點擊測試：點擊移動中的圓形！&lt;/h2&gt;</p>
-<p>&lt;div id="brython_div1" style="width: 100%; max-width: 600px; min-width: 320px; height: 400px; margin: 20px auto;"&gt;<br/> &lt;/div&gt;</p>
-<p>{% raw %} <br/> &lt;script type="text/python"&gt;<br/> from browser import document, timer, window, ajax<br/> import random<br/> import time</p>
-<p># --- 遊戲設定 ---<br/> GAME_DURATION = 30 <br/> score = 0<br/> game_active = False</p>
-<p># --- 獲取 DOM 元素及初始化 ---<br/> game_area = document["brython_div1"]<br/> game_area.style.border = "3px solid #333"<br/> game_area.style.backgroundColor = "#e0e0ff"<br/> game_area.style.position = "relative"<br/> game_area.style.overflow = "hidden"<br/> game_area.style.cursor = "crosshair"</p>
-<p># 分數與時間顯示<br/> score_display = document.createElement("div")<br/> score_display.style.position = "absolute"<br/> score_display.style.top = "10px"<br/> score_display.style.left = "10px"<br/> score_display.style.fontSize = "1.2em"<br/> score_display.style.fontWeight = "bold"<br/> score_display.style.backgroundColor = "rgba(255, 255, 255, 0.7)"<br/> score_display.style.padding = "5px"<br/> game_area &lt;= score_display</p>
-<p>timer_display = document.createElement("div")<br/> timer_display.style.position = "absolute"<br/> timer_display.style.top = "10px"<br/> timer_display.style.right = "10px"<br/> timer_display.style.fontSize = "1.2em"<br/> timer_display.style.fontWeight = "bold"<br/> timer_display.style.backgroundColor = "rgba(255, 255, 255, 0.7)"<br/> timer_display.style.padding = "5px"<br/> game_area &lt;= timer_display</p>
-<p># 創建目標圓點<br/> target = document.createElement("div")<br/> target.id = "target"<br/> target.style.width = "50px"<br/> target.style.height = "50px"<br/> target.style.backgroundColor = "#ff4500" # 🔹 固定顏色<br/> target.style.position = "absolute"<br/> target.style.borderRadius = "50%"<br/> target.style.cursor = "pointer"<br/> target.style.transition = "background-color 0.1s, top 0.3s, left 0.3s"<br/> game_area &lt;= target</p>
-<p># 遊戲結束訊息<br/> game_over_msg = document.createElement("div")<br/> game_over_msg.style.position = "absolute"<br/> game_over_msg.style.top = "50%"<br/> game_over_msg.style.left = "50%"<br/> game_over_msg.style.transform = "translate(-50%, -50%)"<br/> game_over_msg.style.backgroundColor = "rgba(0, 0, 0, 0.9)"<br/> game_over_msg.style.color = "white"<br/> game_over_msg.style.padding = "30px"<br/> game_over_msg.style.borderRadius = "10px"<br/> game_over_msg.style.fontSize = "2em"<br/> game_over_msg.style.zIndex = "100"<br/> game_over_msg.style.display = "none"<br/> game_over_msg.style.textAlign = "center"<br/> game_area &lt;= game_over_msg</p>
-<p># --- 遊戲核心邏輯 ---<br/> def move_target():<br/> if not game_active:<br/> return<br/> <br/> max_x = game_area.clientWidth - 50<br/> max_y = game_area.clientHeight - 50<br/> min_y = 40</p>
-<p>new_x = random.randint(0, max(0, max_x))<br/> new_y = random.randint(min_y, max(min_y, max_y))<br/> <br/> target.style.left = f"{new_x}px"<br/> target.style.top = f"{new_y}px"<br/> # 🔹 顏色固定，不再隨機<br/> target.style.backgroundColor = "#ff4500"</p>
-<p># 🔹 點擊或觸碰都能得分（手機可玩）<br/> def hit_target(event):<br/> global score<br/> if not game_active:<br/> return</p>
-<p>score += 1<br/> score_display.text = f"分數: {score}"<br/> move_target()<br/> event.stopPropagation()</p>
-<p>target.bind("click", hit_target)<br/> target.bind("touchstart", hit_target) # 🔹 手機觸控</p>
-<p>def submit_score_to_server(final_score):<br/> def on_complete(req):<br/> if req.status == 200:<br/> window.alert("分數成功上傳至英雄榜！")<br/> else:<br/> try:<br/> resp = window.JSON.parse(req.text)<br/> msg = resp.message<br/> except:<br/> msg = "請檢查登入狀態或伺服器狀態，或確保您已登入。"<br/> window.alert(f"分數上傳失敗 ({req.status})！{msg}")<br/> <br/> req = ajax.ajax()<br/> req.bind('complete', on_complete)<br/> <br/> {% endraw %}<br/> req.open('POST', '{{ url_for("submit_score") }}', True)<br/> {% raw %}<br/> <br/> req.set_header('Content-Type', 'application/json')<br/> data = {'score': final_score}<br/> json_payload = window.JSON.stringify(data)<br/> req.send(json_payload)</p>
-<p>def restart_game(event):<br/> game_over_msg.style.display = "none"<br/> start_game()<br/> event.stopPropagation()</p>
-<p>def check_time():<br/> global game_active<br/> remaining = int(game_over_time - time.time())<br/> <br/> if remaining &lt;= 0:<br/> timer_display.text = "時間: 0s"<br/> if game_active:<br/> game_active = False<br/> submit_score_to_server(score)<br/> game_over_msg.innerHTML = f"遊戲結束！&lt;br&gt;最終分數: {score}"<br/> <br/> restart_btn = document.createElement("button")<br/> restart_btn.text = "重新開始"<br/> restart_btn.style.marginTop = "15px"<br/> restart_btn.style.padding = "10px 20px"<br/> restart_btn.style.fontSize = "0.7em"<br/> restart_btn.style.cursor = "pointer"<br/> restart_btn.bind("click", restart_game)<br/> <br/> game_over_msg &lt;= document.createElement("br")<br/> game_over_msg &lt;= restart_btn<br/> game_over_msg.style.display = "block"<br/> <br/> timer.clear_interval(move_interval_handle)<br/> else:<br/> timer_display.text = f"時間: {remaining}s"<br/> timer.set_timeout(check_time, 1000)</p>
-<p># --- 遊戲啟動 ---<br/> def start_game():<br/> global game_active, game_over_time, move_interval_handle, score<br/> score = 0<br/> game_active = True<br/> score_display.text = "分數: 0"<br/> timer_display.text = f"時間: {GAME_DURATION}s"<br/> <br/> game_over_time = time.time() + GAME_DURATION<br/> <br/> check_time()<br/> move_target()<br/> move_interval_handle = timer.set_interval(move_target, 800)</p>
-<p># 啟動遊戲<br/> start_game()</p>
-<p>&lt;/script&gt;<br/> {% endraw %}<br/> <br/> &lt;/body&gt;<br/>{% endblock %}</p>
-<p><br/><strong>修改重點總結：</strong></p>
-<p><span style="background-color: #ffff99;">手機自適應畫面：</span></p>
-<p><span style="background-color: #ffff99;">width: 100%; max-width: 600px; min-width: 320px;</span></p>
-<p><br/><span style="background-color: #ffff99;">固定圓點顏色：</span></p>
-<p><span style="background-color: #ffff99;">target.style.backgroundColor = "#ff4500"</span></p>
-<p><br/><span style="background-color: #ffff99;">手機觸控支援：</span></p>
-<p><span style="background-color: #ffff99;">target.bind("touchstart", hit_target)</span></p>
-<p><br/><strong>這個版本：</strong></p>
-<p>手機和平板都能正常點擊 / 觸碰圓點</p>
-<p>畫面自動縮放，不會超出手機螢幕</p>
-<p>顏色固定，遊戲更穩定</p>
-<p><span data-teams="true"></span></p>
+<h3><span style="background-color: #ffff00;"><strong>改成 Aim Lab 風格</strong></span></h3>
 <p></p>
+<p><strong>Aim Lab 風格的重點項目說明</strong><br/><br/>深色背景 專注、低干擾<br/>單一目標 一次只出現一個圓<br/>快速生成 點中立刻生成新目標<br/>固定顏色 通常是亮色（紅 / 綠）<br/>命中回饋 命中變色 / 閃爍<br/>統計數據 命中數、命中率、反應時間<br/>訓練感 不是「遊戲」，是「練準度」<br/>二、你原本程式 → Aim Lab 風格的修改重點</p>
+<h3>主要改動</h3>
+<p>背景改深色</p>
+<p>移除自動移動</p>
+<p>點中才生成新目標</p>
+<p>記錄反應時間</p>
+<p>顯示 Accuracy（命中率）</p>
+<p>簡化動畫（快、乾脆）</p>
+<h3>以下是原程式為基底的完整改寫版</h3>
+<p>✅ Aim Lab Style Brython Game（Flask + Jinja2）</p>
+<p>{% extends "base.html" %}</p>
+<p>{% block title %}Aim Lab - Precision Training{% endblock %}</p>
+<p>{% block content %}<br/>&lt;script src="https://cdn.jsdelivr.net/npm/brython@3.11.3/brython.min.js"&gt;&lt;/script&gt;<br/>&lt;script src="https://cdn.jsdelivr.net/npm/brython@3.11.3/brython_stdlib.js"&gt;&lt;/script&gt;</p>
+<p>&lt;body onload="brython(1)"&gt;</p>
+<p>&lt;h2 style="text-align:center;color:white;"&gt;<br/>🎯 Aim Lab – Precision Training<br/>&lt;/h2&gt;</p>
+<p>&lt;div id="brython_div1"&gt;&lt;/div&gt;</p>
+<p>{% raw %}<br/>&lt;script type="text/python"&gt;<br/>from browser import document, timer, window, ajax<br/>import random, time</p>
+<p># =============================<br/># Aim Lab 訓練設定<br/># =============================<br/>GAME_DURATION = 30<br/>TARGET_SIZE = 50</p>
+<p>score = 0<br/>shots = 0<br/>game_active = False<br/>spawn_time = 0<br/>reaction_times = []</p>
+<p># =============================<br/># 遊戲場地<br/># =============================<br/>game_area = document["brython_div1"]<br/>game_area.style.width = "700px"<br/>game_area.style.height = "450px"<br/>game_area.style.margin = "20px auto"<br/>game_area.style.border = "2px solid #555"<br/>game_area.style.backgroundColor = "#111"<br/>game_area.style.position = "relative"<br/>game_area.style.cursor = "crosshair"<br/>game_area.style.overflow = "hidden"</p>
+<p># =============================<br/># UI 顯示<br/># =============================<br/>hud = document.createElement("div")<br/>hud.style.position = "absolute"<br/>hud.style.top = "10px"<br/>hud.style.left = "10px"<br/>hud.style.color = "#0f0"<br/>hud.style.fontFamily = "monospace"<br/>hud.style.fontSize = "1.1em"<br/>game_area &lt;= hud</p>
+<p>timer_display = document.createElement("div")<br/>timer_display.style.position = "absolute"<br/>timer_display.style.top = "10px"<br/>timer_display.style.right = "10px"<br/>timer_display.style.color = "#0f0"<br/>timer_display.style.fontFamily = "monospace"<br/>timer_display.style.fontSize = "1.1em"<br/>game_area &lt;= timer_display</p>
+<p># =============================<br/># 目標<br/># =============================<br/>target = document.createElement("div")<br/>target.style.width = f"{TARGET_SIZE}px"<br/>target.style.height = f"{TARGET_SIZE}px"<br/>target.style.borderRadius = "50%"<br/>target.style.backgroundColor = "#ff3b3b"<br/>target.style.position = "absolute"<br/>target.style.display = "none"<br/>game_area &lt;= target</p>
+<p># =============================<br/># 核心邏輯<br/># =============================<br/>def spawn_target():<br/> global spawn_time<br/> max_x = game_area.clientWidth - TARGET_SIZE<br/> max_y = game_area.clientHeight - TARGET_SIZE</p>
+<p>x = random.randint(0, max_x)<br/> y = random.randint(40, max_y)</p>
+<p>target.style.left = f"{x}px"<br/> target.style.top = f"{y}px"<br/> target.style.display = "block"</p>
+<p>spawn_time = time.time()</p>
+<p>@target.bind("click")<br/>def hit(event):<br/> global score, shots</p>
+<p>if not game_active:<br/> return</p>
+<p>score += 1<br/> shots += 1</p>
+<p>reaction = time.time() - spawn_time<br/> reaction_times.append(reaction)</p>
+<p>target.style.display = "none"<br/> spawn_target()</p>
+<p>update_hud()<br/> event.stopPropagation()</p>
+<p>@game_area.bind("click")<br/>def miss(event):<br/> global shots<br/> if not game_active:<br/> return<br/> shots += 1<br/> update_hud()</p>
+<p>def update_hud():<br/> accuracy = (score / shots * 100) if shots else 0<br/> avg_reaction = (sum(reaction_times) / len(reaction_times)) if reaction_times else 0</p>
+<p>hud.text = (<br/> f"Hits: {score} "<br/> f"Shots: {shots} "<br/> f"Accuracy: {accuracy:.1f}% "<br/> f"Avg RT: {avg_reaction*1000:.0f}ms"<br/> )</p>
+<p># =============================<br/># 計時<br/># =============================<br/>def check_time():<br/> global game_active</p>
+<p>remain = int(end_time - time.time())<br/> if remain &lt;= 0:<br/> game_active = False<br/> target.style.display = "none"<br/> timer_display.text = "TIME UP"</p>
+<p>submit_score()<br/> return</p>
+<p>timer_display.text = f"{remain}s"<br/> timer.set_timeout(check_time, 1000)</p>
+<p># =============================<br/># 上傳分數<br/># =============================<br/>def submit_score():<br/> data = {<br/> "score": score,<br/> "shots": shots,<br/> "accuracy": score / shots if shots else 0<br/> }</p>
+<p>req = ajax.ajax()<br/> req.open("POST", "{{ url_for('submit_score') }}", True)<br/> req.set_header("Content-Type", "application/json")<br/> req.send(window.JSON.stringify(data))</p>
+<p># =============================<br/># 開始遊戲<br/># =============================<br/>def start_game():<br/> global score, shots, reaction_times, end_time, game_active</p>
+<p>score = 0<br/> shots = 0<br/> reaction_times = []<br/> game_active = True</p>
+<p>end_time = time.time() + GAME_DURATION<br/> update_hud()<br/> spawn_target()<br/> check_time()</p>
+<p>start_game()<br/>&lt;/script&gt;<br/>{% endraw %}</p>
+<p>&lt;/body&gt;<br/>{% endblock %}</p>
+<h3><span style="background-color: #ffff00;">Aim Lab版本整合成完整的、修整過的版本，加入...</span></h3>
+<p>圓點顏色：亮天藍 #00aaff</p>
+<p>命中閃爍效果</p>
+<p>Miss 點擊紅色閃爍效果</p>
+<p>保留分數、命中率、平均反應時間</p>
+<p>{% extends "base.html" %}</p>
+<p>{% block title %}Aim Lab - Precision Training{% endblock %}</p>
+<p>{% block content %}<br/>&lt;script src="https://cdn.jsdelivr.net/npm/brython@3.11.3/brython.min.js"&gt;&lt;/script&gt;<br/>&lt;script src="https://cdn.jsdelivr.net/npm/brython@3.11.3/brython_stdlib.js"&gt;&lt;/script&gt;</p>
+<p>&lt;body onload="brython(1)"&gt;</p>
+<p>&lt;h2 style="text-align:center;color:white;"&gt;<br/>🎯 Aim Lab – Precision Training<br/>&lt;/h2&gt;</p>
+<p>&lt;div id="brython_div1"&gt;&lt;/div&gt;</p>
+<p>{% raw %}<br/>&lt;script type="text/python"&gt;<br/>from browser import document, timer, window, ajax<br/>import random, time</p>
+<p># =============================<br/># 設定<br/># =============================<br/>GAME_DURATION = 30<br/>TARGET_SIZE = 50</p>
+<p>score = 0<br/>shots = 0<br/>game_active = False<br/>spawn_time = 0<br/>reaction_times = []</p>
+<p># =============================<br/># 遊戲場地<br/># =============================<br/>game_area = document["brython_div1"]<br/>game_area.style.width = "700px"<br/>game_area.style.height = "450px"<br/>game_area.style.margin = "20px auto"<br/>game_area.style.border = "2px solid #555"<br/>game_area.style.backgroundColor = "#111"<br/>game_area.style.position = "relative"<br/>game_area.style.cursor = "crosshair"<br/>game_area.style.overflow = "hidden"</p>
+<p># =============================<br/># HUD 顯示<br/># =============================<br/>hud = document.createElement("div")<br/>hud.style.position = "absolute"<br/>hud.style.top = "10px"<br/>hud.style.left = "10px"<br/>hud.style.color = "#0f0"<br/>hud.style.fontFamily = "monospace"<br/>hud.style.fontSize = "1.1em"<br/>game_area &lt;= hud</p>
+<p>timer_display = document.createElement("div")<br/>timer_display.style.position = "absolute"<br/>timer_display.style.top = "10px"<br/>timer_display.style.right = "10px"<br/>timer_display.style.color = "#0f0"<br/>timer_display.style.fontFamily = "monospace"<br/>timer_display.style.fontSize = "1.1em"<br/>game_area &lt;= timer_display</p>
+<p># =============================<br/># 目標圓點<br/># =============================<br/>target = document.createElement("div")<br/>target.style.width = f"{TARGET_SIZE}px"<br/>target.style.height = f"{TARGET_SIZE}px"<br/>target.style.borderRadius = "50%"<br/>target.style.backgroundColor = "#00aaff" # 亮天藍<br/>target.style.position = "absolute"<br/>target.style.display = "none"<br/>game_area &lt;= target</p>
+<p># =============================<br/># 核心邏輯<br/># =============================<br/>def spawn_target():<br/> global spawn_time<br/> max_x = game_area.clientWidth - TARGET_SIZE<br/> max_y = game_area.clientHeight - TARGET_SIZE</p>
+<p>x = random.randint(0, max_x)<br/> y = random.randint(40, max_y)</p>
+<p>target.style.left = f"{x}px"<br/> target.style.top = f"{y}px"<br/> target.style.display = "block"</p>
+<p>spawn_time = time.time()</p>
+<p># --- 命中事件 ---<br/>@target.bind("click")<br/>def hit(event):<br/> global score, shots</p>
+<p>if not game_active:<br/> return</p>
+<p>score += 1<br/> shots += 1</p>
+<p>reaction = time.time() - spawn_time<br/> reaction_times.append(reaction)</p>
+<p># 命中閃白效果<br/> target.style.backgroundColor = "#ffffff"<br/> def restore_color():<br/> target.style.backgroundColor = "#00aaff"<br/> timer.set_timeout(restore_color, 100)</p>
+<p>target.style.display = "none"<br/> spawn_target()</p>
+<p>update_hud()<br/> event.stopPropagation()</p>
+<p># --- Miss 點擊事件 ---<br/>@game_area.bind("click")<br/>def miss(event):<br/> global shots<br/> if not game_active:<br/> return</p>
+<p>shots += 1<br/> # Miss 閃紅<br/> original_color = game_area.style.backgroundColor<br/> game_area.style.backgroundColor = "#440000"<br/> def restore_bg():<br/> game_area.style.backgroundColor = original_color<br/> timer.set_timeout(restore_bg, 100)</p>
+<p>update_hud()</p>
+<p>def update_hud():<br/> accuracy = (score / shots * 100) if shots else 0<br/> avg_reaction = (sum(reaction_times) / len(reaction_times)) if reaction_times else 0<br/> hud.text = (<br/> f"Hits: {score} "<br/> f"Shots: {shots} "<br/> f"Accuracy: {accuracy:.1f}% "<br/> f"Avg RT: {avg_reaction*1000:.0f}ms"<br/> )</p>
+<p># =============================<br/># 計時<br/># =============================<br/>def check_time():<br/> global game_active<br/> remain = int(end_time - time.time())</p>
+<p>if remain &lt;= 0:<br/> game_active = False<br/> target.style.display = "none"<br/> timer_display.text = "TIME UP"<br/> submit_score()<br/> return</p>
+<p>timer_display.text = f"{remain}s"<br/> timer.set_timeout(check_time, 1000)</p>
+<p># =============================<br/># 上傳分數<br/># =============================<br/>def submit_score():<br/> data = {<br/> "score": score,<br/> "shots": shots,<br/> "accuracy": score / shots if shots else 0<br/> }</p>
+<p>req = ajax.ajax()<br/> req.open("POST", "{{ url_for('submit_score') }}", True)<br/> req.set_header("Content-Type", "application/json")<br/> req.send(window.JSON.stringify(data))</p>
+<p># =============================<br/># 開始遊戲<br/># =============================<br/>def start_game():<br/> global score, shots, reaction_times, end_time, game_active</p>
+<p>score = 0<br/> shots = 0<br/> reaction_times = []<br/> game_active = True</p>
+<p>end_time = time.time() + GAME_DURATION<br/> update_hud()<br/> spawn_target()<br/> check_time()</p>
+<p>start_game()<br/>&lt;/script&gt;<br/>{% endraw %}</p>
+<p>&lt;/body&gt;<br/>{% endblock %}</p>
+<p><span style="background-color: #ffff00;"><strong>🔹 改進說明</strong></span></p>
+<p>圓點顏色固定亮天藍：#00aaff</p>
+<p>命中閃白：命中瞬間變白，0.1 秒後回亮天藍</p>
+<p>Miss 閃紅：點擊空白背景時背景變暗紅，0.1 秒後恢復</p>
+<p>HUD 顯示：</p>
+<p>Hits（命中次數）</p>
+<p>Shots（射擊次數）</p>
+<p>Accuracy（命中率）</p>
+<p>Avg RT（平均反應時間毫秒）</p>
+<p>計時器：30 秒倒數</p>
+<p>Ajax 上傳分數：遊戲結束自動提交</p>
