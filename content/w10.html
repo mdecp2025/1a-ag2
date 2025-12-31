@@ -2,7 +2,7 @@
         <head>
         <title>cmsimde_site</title>
         <meta charset="utf-8">
-<meta property="head" content="H3">
+<meta property="head" content="H2">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
@@ -142,9 +142,31 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">如何建立團體github網站 << <a href='如何建立團體github網站.html'>Previous</a> <a href='我的作法.html'>Next</a> >> 我的作法<br /><h1>一般作法</h1>
-<p>首先在github下載以教授給的cp demo做範本。進入Codespaces裡輸入程式、載入phython套件，然後在網路上開終端機進入編輯範例網站畫面。</p>
-<br />如何建立團體github網站 << <a href='如何建立團體github網站.html'>Previous</a> <a href='我的作法.html'>Next</a> >> 我的作法</div>
+    <div id="tipue_search_content">w7 << <a href='w7.html'>Previous</a> <a href='w11.html'>Next</a> >> w11<br /><h1>w10</h1>
+<h4>如何在瀏覽器中模擬機器人作動</h4>
+<h4 data-path-to-node="4">1. 核心原理：從數學到畫布</h4>
+<h4 data-path-to-node="5">要在瀏覽器模擬機器人，你需要理解兩個座標系統的轉換：</h4>
+<ol data-path-to-node="6" start="1">
+<li>
+<h4 data-path-to-node="6,0,0">世界座標 (World Coordinates)：這是你在機構學 (Kinematics) 計算時用的數學座標（例如：原點 (0,0) 在關節中心，Y 軸向上）。</h4>
+</li>
+<li>
+<h4 data-path-to-node="6,1,0">螢幕座標 (Screen/Canvas Coordinates)：這是瀏覽器畫布的座標（原點 (0,0) 在左上角，Y 軸向下）。</h4>
+</li>
+</ol>
+<h4 data-path-to-node="7">實作流程：</h4>
+<ol data-path-to-node="8" start="1">
+<li>
+<h4>輸入 (Input)：透過拉桿 (Slider) 或時間 (Time) 改變關節角度 (<span class="math-inline" data-index-in-node="44" data-math="\theta_1, \theta_2">$\theta_1, \theta_2$</span>)。</h4>
+</li>
+<li>
+<h4>計算 (Math)：利用正向運動學 (Forward Kinematics) 算出各個關節點的 <span class="math-inline" data-index-in-node="48" data-math="(x, y)">$(x, y)$</span> 位置。</h4>
+</li>
+<li>
+<h4 data-path-to-node="8,2,0">繪製 (Render)：使用 Brython 清除畫布，並根據算出的點將線條畫出來。</h4>
+</li>
+</ol>
+<br />w7 << <a href='w7.html'>Previous</a> <a href='w11.html'>Next</a> >> w11</div>
         
     <!-- footer -->
       <div class="container">
