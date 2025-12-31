@@ -649,8 +649,8 @@ pyodide.runPython(code);
 </pre>
 <p><a href="https://mde.tw/cp2025/content/Pyodide.html?src=https://gist.githubusercontent.com/mdecycu/ec4bb35dd0769e7a83d2a9fa57878a67/raw/3ed6869dcd7312254513ca507de17945e15a9b6f/box_max_volume_short.py">Volume_max_pyodide_de_short.py</a></p>
 <p><a href="https://mde.tw/cp2025/content/Pyodide.html?src=https://gist.githubusercontent.com/mdecycu/ec4bb35dd0769e7a83d2a9fa57878a67/raw/3ed6869dcd7312254513ca507de17945e15a9b6f/box_volume_max_pyodide_de.py">Volume_max_pyodide_de.py</a></p>
-<h1><span>學習心得報告主題</span></h1>
-<h2><span>w3</span></h2>
+<h1>學習心得報告主題</h1>
+<h2>w3</h2>
 <p><strong>什麼是 git, GitHub, gist 與 cmsimde? 如何使用這些工具？為什麼要使用這些工具？</strong></p>
 <p><span>為何Git 與 Github?</span></p>
 <p>使用 Git 與 GitHub 主要有以下幾個原因：</p>
@@ -748,7 +748,7 @@ pyodide.runPython(code);
 <h4>總結:</h4>
 <p>Git 與 GitHub 提供完整的版本控制、團隊協作、問題追蹤、程式碼審查與備份機制，讓開發流程更有條理，大幅提升開發效率與品質。不論團隊或個人開發，都能享有回溯、備份、管理等多重好處。</p>
 </div>
-<h2><strong><span>w7</span></strong></h2>
+<h2>w7</h2>
 <p><strong>Brython 是什麼？如何在瀏覽器配置 Brython 環境？ Brython 能做什麼？</strong></p>
 <p><span style="background-color: #ccffff;"><strong>一、Brython 是什麼？</strong></span></p>
 <p>Brython = Browser Python（瀏覽器中的 Python）</p>
@@ -832,6 +832,31 @@ pyodide.runPython(code);
 <p>➡️ Brython = 最佳選擇</p>
 <p><span style="background-color: #ccffff;"><strong>總結:</strong></span></p>
 <p>Brython 就是：用 Python 在瀏覽器寫前端程式</p>
+<p></p>
+<h2>w10</h2>
+<h4>如何在瀏覽器中模擬機器人作動</h4>
+<h4 data-path-to-node="4">1. 核心原理：從數學到畫布</h4>
+<h4 data-path-to-node="5">要在瀏覽器模擬機器人，你需要理解兩個座標系統的轉換：</h4>
+<ol data-path-to-node="6" start="1">
+<li>
+<h4 data-path-to-node="6,0,0">世界座標 (World Coordinates)：這是你在機構學 (Kinematics) 計算時用的數學座標（例如：原點 (0,0) 在關節中心，Y 軸向上）。</h4>
+</li>
+<li>
+<h4 data-path-to-node="6,1,0">螢幕座標 (Screen/Canvas Coordinates)：這是瀏覽器畫布的座標（原點 (0,0) 在左上角，Y 軸向下）。</h4>
+</li>
+</ol>
+<h4 data-path-to-node="7">實作流程：</h4>
+<ol data-path-to-node="8" start="1">
+<li>
+<h4>輸入 (Input)：透過拉桿 (Slider) 或時間 (Time) 改變關節角度 (<span class="math-inline" data-index-in-node="44" data-math="\theta_1, \theta_2">$\theta_1, \theta_2$</span>)。</h4>
+</li>
+<li>
+<h4>計算 (Math)：利用正向運動學 (Forward Kinematics) 算出各個關節點的 <span class="math-inline" data-index-in-node="48" data-math="(x, y)">$(x, y)$</span> 位置。</h4>
+</li>
+<li>
+<h4 data-path-to-node="8,2,0">繪製 (Render)：使用 Brython 清除畫布，並根據算出的點將線條畫出來。</h4>
+</li>
+</ol>
 <h1>w11</h1>
 <h2>如何建立團體github網站</h2>
 <h3>一般作法</h3>
@@ -936,7 +961,7 @@ pyodide.runPython(code);
 <p><br/>（反方向同步，用來備份）</p>
 <p>✅ 一句話總結（你可以記這句）</p>
 <p>把「個人 repo」當來源，用 fetch + merge 合併到「Classroom repo」一次，之後只用 Classroom。</p>
-<h3><strong>後來大家都要編輯需要中止同步</strong></h3>
+<h3>後來大家都要編輯需要中止同步</h3>
 <p><strong>我:</strong></p>
 <p>我現在想要把我倉儲的跟我個人的倉儲都獨立成個體(取消我個人網站是主要，分組網站是備份)該怎麼做?</p>
 <p><strong>AI:</strong></p>
@@ -971,14 +996,14 @@ pyodide.runPython(code);
 <p>URL 正確</p>
 <p>就是「獨立乾淨狀態」✔️</p>
 <p><strong></strong></p>
-<h3><strong>以後只要小組成員要編輯</strong></h3>
+<h3>以後只要小組成員要編輯</h3>
 <p><strong>1.就在團體倉儲<span style="background-color: #ffff99;">開 Codespaces 進到 fluffy sniffle</span> 這個專案裡。</strong></p>
 <p><strong>2.在 <span style="background-color: #ffff99;">init_replit 裡輸入pip install flask flask_cors bs4 lxml pelican markdown gevent</span></strong></p>
 <p><strong>3.執行後<span style="background-color: #ffff99;">再輸入 python main.py&amp;</span> </strong></p>
 <p><strong>4.在<span style="background-color: #ffff99;">終端機</span>的地方就會出現本網頁的網址</strong></p>
 <p><strong>5.編輯的頁面輸入首頁第一行密碼即可進入編輯畫面</strong></p>
 <h1>w12</h1>
-<h2><span style="background-color: #ffff00;">國旗旋轉</span></h2>
+<h2>國旗旋轉</h2>
 <p><em><strong>(複製到首頁下Brython指令區)</strong></em></p>
 <p><em><strong>________________________________________________________________________</strong></em></p>
 <p># 畫中華民國國旗，並展示 90 度與 45 度順時針旋轉<br/># 導入 doc<br/>from browser import document as doc<br/># 以下將利用 html 產生所需的繪圖畫布<br/>from browser import html<br/># 利用 math 函式庫執行三角函數運算<br/>import math</p>
@@ -998,7 +1023,7 @@ pyodide.runPython(code);
 <p># --- 繪製函數：順時針旋轉 90 度 ---<br/>def draw_90_degree_flag():<br/> ctx = doc["flag_90"].getContext("2d")<br/> <br/> # 1. 儲存當前狀態<br/> ctx.save()<br/> <br/> # 2. 平移原點到畫布中心 (600/2, 400/2) = (300, 200)<br/> ctx.translate(CENTER_X, CENTER_Y)<br/> <br/> # 3. 旋轉 90 度 (π/2) 順時針<br/> ctx.rotate(math.pi / 2)<br/> <br/> # 4. 將原點平移回去，以便國旗內容以 (0, 0) 為起點繪製<br/> ctx.translate(-CENTER_X, -CENTER_Y)<br/> <br/> # 5. 繪製國旗內容<br/> draw_flag_content(ctx)<br/> <br/> # 6. 恢復狀態<br/> ctx.restore()</p>
 <p># --- 繪製函數：順時針旋轉 45 度 ---<br/>def draw_45_degree_flag():<br/> ctx = doc["flag_45"].getContext("2d")<br/> <br/> # 1. 儲存當前狀態<br/> ctx.save()<br/> <br/> # 2. 平移原點到畫布中心<br/> ctx.translate(CENTER_X, CENTER_Y)<br/> <br/> # 3. 旋轉 45 度 (π/4) 順時針<br/> ctx.rotate(math.pi / 4)<br/> <br/> # 4. 將原點平移回去<br/> ctx.translate(-CENTER_X, -CENTER_Y)<br/> <br/> # 5. 繪製國旗內容<br/> draw_flag_content(ctx)<br/> <br/> # 6. 恢復狀態<br/> ctx.restore()</p>
 <p># --- 執行繪圖 ---<br/>draw_original_flag()<br/>draw_90_degree_flag()<br/>draw_45_degree_flag()</p>
-<h2><span style="background-color: #ffff00;">機器人七段程式碼</span></h2>
+<h2>機器人七段程式碼</h2>
 <p><em><strong>(複製到首頁下Brython指令區)</strong></em></p>
 <p><em><strong>________________________________________________________________________</strong></em></p>
 <p>#請修正以下程式讓機器人可以走出七段顯示器格式的數字<br/>from robot_lib import World as BaseWorld, AnimatedRobot as BaseRobot, timer, CELL_SIZE</p>
@@ -1129,7 +1154,7 @@ pyodide.runPython(code);
 <p>每 0.8 秒移動一次圓形</p>
 <p><br/>start_game()<br/>➡️ 網頁一打開就開始遊戲 🎮</p>
 <h2>我所添加的程式新功能</h2>
-<h3><span style="background-color: #ffff00;"><strong>改成 Aim Lab 風格</strong></span></h3>
+<h3>改成 Aim Lab 風格</h3>
 <p></p>
 <p><strong>Aim Lab 風格的重點項目說明</strong><br/><br/>深色背景 專注、低干擾<br/>單一目標 一次只出現一個圓<br/>快速生成 點中立刻生成新目標<br/>固定顏色 通常是亮色（紅 / 綠）<br/>命中回饋 命中變色 / 閃爍<br/>統計數據 命中數、命中率、反應時間<br/>訓練感 不是「遊戲」，是「練準度」<br/>二、你原本程式 → Aim Lab 風格的修改重點</p>
 <h3>主要改動</h3>
@@ -1178,7 +1203,7 @@ pyodide.runPython(code);
 <p>end_time = time.time() + GAME_DURATION<br/> update_hud()<br/> spawn_target()<br/> check_time()</p>
 <p>start_game()<br/>&lt;/script&gt;<br/>{% endraw %}</p>
 <p>&lt;/body&gt;<br/>{% endblock %}</p>
-<h3><span style="background-color: #ffff00;">Aim Lab版本整合成完整的、修整過的版本，加入...</span></h3>
+<h3>Aim Lab版本整合成完整的、修整過的版本，加入...</h3>
 <p>圓點顏色：亮天藍 #00aaff</p>
 <p>命中閃爍效果</p>
 <p>Miss 點擊紅色閃爍效果</p>
