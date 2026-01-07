@@ -834,29 +834,55 @@ pyodide.runPython(code);
 <p>Brython 就是：用 Python 在瀏覽器寫前端程式</p>
 <p></p>
 <h2>w10</h2>
-<h3>如何在瀏覽器中模擬機器人作動</h3>
-<h3 data-path-to-node="4">1. 核心原理：從數學到畫布</h3>
-<h3 data-path-to-node="5">要在瀏覽器模擬機器人，你需要理解兩個座標系統的轉換：</h3>
+<h4>如何在瀏覽器中模擬機器人作動</h4>
+<h4 data-path-to-node="4">1. 核心原理：從數學到畫布</h4>
+<h4 data-path-to-node="5">要在瀏覽器模擬機器人，你需要理解兩個座標系統的轉換：</h4>
 <ol data-path-to-node="6" start="1">
 <li>
-<h3 data-path-to-node="6,0,0">世界座標 (World Coordinates)：這是你在機構學 (Kinematics) 計算時用的數學座標（例如：原點 (0,0) 在關節中心，Y 軸向上）。</h3>
+<h4 data-path-to-node="6,0,0">世界座標 (World Coordinates)：這是你在機構學 (Kinematics) 計算時用的數學座標（例如：原點 (0,0) 在關節中心，Y 軸向上）。</h4>
 </li>
 <li>
-<h3 data-path-to-node="6,1,0">螢幕座標 (Screen/Canvas Coordinates)：這是瀏覽器畫布的座標（原點 (0,0) 在左上角，Y 軸向下）。</h3>
+<h4 data-path-to-node="6,1,0">螢幕座標 (Screen/Canvas Coordinates)：這是瀏覽器畫布的座標（原點 (0,0) 在左上角，Y 軸向下）。</h4>
 </li>
 </ol>
-<h3 data-path-to-node="7">實作流程：</h3>
+<h4 data-path-to-node="7">實作流程：</h4>
 <ol data-path-to-node="8" start="1">
 <li>
-<br/>輸入 (Input)：透過拉桿 (Slider) 或時間 (Time) 改變關節角度 (<span class="math-inline" data-index-in-node="44" data-math="\theta_1, \theta_2">$\theta_1, \theta_2$</span>)。
+<h4>輸入 (Input)：透過拉桿 (Slider) 或時間 (Time) 改變關節角度 (<span class="math-inline" data-index-in-node="44" data-math="\theta_1, \theta_2">$\theta_1, \theta_2$</span>)。</h4>
 </li>
 <li>
-<br/>計算 (Math)：利用正向運動學 (Forward Kinematics) 算出各個關節點的 <span class="math-inline" data-index-in-node="48" data-math="(x, y)">$(x, y)$</span> 位置。
+<h4>計算 (Math)：利用正向運動學 (Forward Kinematics) 算出各個關節點的 <span class="math-inline" data-index-in-node="48" data-math="(x, y)">$(x, y)$</span> 位置。</h4>
 </li>
 <li>
-<h3 data-path-to-node="8,2,0">繪製 (Render)：使用 Brython 清除畫布，並根據算出的點將線條畫出來。</h3>
+<h4 data-path-to-node="8,2,0">繪製 (Render)：使用 Brython 清除畫布，並根據算出的點將線條畫出來。</h4>
 </li>
-</ol><h1>w11</h1>
+</ol>
+<h2>w14</h2>
+<h5 data-path-to-node="2">1. 零安裝的即時體驗與分享 (Accessibility)</h5>
+<ul data-path-to-node="3">
+<li>
+<h5 data-path-to-node="3,0,0"><b data-index-in-node="0" data-path-to-node="3,0,0">目的</b>：<b data-index-in-node="3" data-path-to-node="3,0,0">Webots cloud</b>允許使用者直接在瀏覽器中執行 3D 模擬，完全<b data-index-in-node="47" data-path-to-node="3,0,0">不需要安裝</b>龐大的軟體或設定複雜的環境。</h5>
+</li>
+<li>
+<h5 data-path-to-node="3,1,0"><b data-index-in-node="0" data-path-to-node="3,1,0">應用</b>：這對於教學或展示非常有用。將<span> </span><code data-index-in-node="28" data-path-to-node="3,1,0">otto_robot</code><span> </span>或<span> </span><code data-index-in-node="41" data-path-to-node="3,1,0">open_duck_mini</code><span> </span>的模擬場景打包上傳，其他人只要點開連結就能立刻看到機器人的運作，無需下載幾百 MB 的檔案或配置 Python 環境。</h5>
+</li>
+</ul>
+<h5 data-path-to-node="4">2. 硬體安全與極限測試 (Safety &amp; Durability)</h5>
+<ul data-path-to-node="5">
+<li>
+<h5 data-path-to-node="5,0,0"><b data-index-in-node="0" data-path-to-node="5,0,0">目的</b>：保護實體機器人免於損壞。</h5>
+</li>
+<li>
+<h5 data-path-to-node="5,1,0"><b data-index-in-node="0" data-path-to-node="5,1,0">應用 (Open Duck Mini / Otto)</b>：這兩個都是<b data-index-in-node="32" data-path-to-node="5,1,0">雙足/多足機器人</b>。在開發「走路」演算法（特別是像 Open Duck Mini 這種涉及強化學習 Reinforcement Learning 的專案）時，機器人會跌倒成千上萬次。</h5>
+<ul data-path-to-node="5,1,1">
+<li>
+<h5 data-path-to-node="5,1,1,0,0"><b data-index-in-node="0" data-path-to-node="5,1,1,0,0">模擬優勢</b>：在瀏覽器中跌倒不會摔斷 3D 列印件，也不會燒壞伺服馬達（Servo）。可以大膽調整參數，直到動作穩定後再燒錄到實體機器人上。</h5>
+</li>
+</ul>
+</li>
+</ul><h2>w17</h2>
+<h2>w18</h2>
+<h1>w11</h1>
 <h2>如何建立團體github網站</h2>
 <h3>一般作法</h3>
 <p>首先在github下載以教授給的cp demo做範本。進入Codespaces裡輸入程式、載入phython套件，然後在網路上開終端機進入編輯範例網站畫面。</p>
